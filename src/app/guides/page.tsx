@@ -49,6 +49,54 @@ const guides = [
     tag: "Cost Guide",
   },
   {
+    title: "How to Start a Roofing Business (2026)",
+    href: "/guides/starting-a-roofing-business/",
+    description:
+      "Manufacturer certifications, equipment costs ($15K–$35K), per-square pricing, insurance restoration work, and scaling from one crew to multiple.",
+    icon: "🏠",
+    tag: "Trade Guide",
+  },
+  {
+    title: "How to Start a Landscaping Business (2026)",
+    href: "/guides/starting-a-landscaping-business/",
+    description:
+      "Low startup costs ($8K–$25K), recurring maintenance revenue, route density, hardscape upsells, and snow removal for year-round income.",
+    icon: "🌿",
+    tag: "Trade Guide",
+  },
+  {
+    title: "How to Start a Painting Business (2026)",
+    href: "/guides/starting-a-painting-business/",
+    description:
+      "Lowest startup cost of any trade ($3K–$10K), 50–65% margins, EPA RRP certification, and scaling with crew leads.",
+    icon: "🎨",
+    tag: "Trade Guide",
+  },
+  {
+    title: "How Much Does HVAC Installation Cost? (2026)",
+    href: "/guides/hvac-installation-cost/",
+    description:
+      "Central AC, furnace, heat pump, and mini-split costs by system type and home size. Tax credits, rebates, and how to save.",
+    icon: "❄️",
+    tag: "Cost Guide",
+  },
+  {
+    title: "How Much Does a Concrete Driveway Cost? (2026)",
+    href: "/guides/concrete-driveway-cost/",
+    description:
+      "Standard, stamped, and colored concrete costs per square foot. Compare to asphalt, pavers, and gravel alternatives.",
+    icon: "🚗",
+    tag: "Cost Guide",
+  },
+  {
+    title: "How Much Does an Electrical Panel Upgrade Cost? (2026)",
+    href: "/guides/electrical-panel-upgrade-cost/",
+    description:
+      "200-amp panel upgrade costs, EV charger considerations, permit requirements, and why you should never DIY electrical panel work.",
+    icon: "🔌",
+    tag: "Cost Guide",
+  },
+  {
     title: "Contractor Software Buyer's Guide (2026)",
     href: "/guides/contractor-software-buyers-guide/",
     description:
