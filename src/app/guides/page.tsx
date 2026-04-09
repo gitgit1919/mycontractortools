@@ -16,6 +16,14 @@ const guides = [
     icon: "🚀",
     tag: "Most Popular",
   },
+  {
+    title: "Contractor Software Buyer's Guide (2026)",
+    href: "/guides/contractor-software-buyers-guide/",
+    description:
+      "Compare scheduling, invoicing, and field service software with real pricing. Trade-specific recommendations, hidden cost warnings, and questions to ask before you buy.",
+    icon: "📋",
+    tag: "Free Download",
+  },
 ];
 
 export default function GuidesIndex() {
