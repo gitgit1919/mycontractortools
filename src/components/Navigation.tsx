@@ -24,12 +24,17 @@ const softwareReviews = [
   { name: "Best Roofing Software", href: "/best/roofing-software/" },
   { name: "Best Landscaping Software", href: "/best/landscaping-software/" },
   { name: "Best GC Software", href: "/best/general-contractor-software/" },
+  { name: "Best Painting Software", href: "/best/painting-software/" },
+  { name: "Best Flooring Software", href: "/best/flooring-software/" },
 ];
 
 const comparisons = [
   { name: "Jobber vs Housecall Pro", href: "/compare/jobber-vs-housecall-pro/" },
   { name: "ServiceTitan vs Housecall Pro", href: "/compare/servicetitan-vs-housecall-pro/" },
   { name: "Jobber vs ServiceTitan", href: "/compare/jobber-vs-servicetitan/" },
+  { name: "Buildertrend vs CoConstruct", href: "/compare/buildertrend-vs-coconstruct/" },
+  { name: "Jobber vs FieldEdge", href: "/compare/jobber-vs-fieldedge/" },
+  { name: "Jobber vs JobNimbus", href: "/compare/jobber-vs-jobnimbus/" },
 ];
 
 export default function Navigation() {

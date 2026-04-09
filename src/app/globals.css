@@ -22,6 +22,96 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
+/* Print-friendly styles */
+@media print {
+  /* Hide non-essential UI elements */
+  nav,
+  footer,
+  [role="navigation"],
+  [role="contentinfo"],
+  form,
+  button,
+  input,
+  select,
+  textarea,
+  [data-email-capture],
+  [class*="email-capture"],
+  [class*="EmailCapture"] {
+    display: none !important;
+  }
+
+  /* White background, black text everywhere */
+  body,
+  main,
+  section,
+  div,
+  article {
+    background: white !important;
+    color: black !important;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Remove background colors from result/comparison cards */
+  [class*="card"],
+  [class*="result"],
+  [class*="bg-brand"],
+  [class*="bg-gray"],
+  [class*="bg-blue"],
+  [class*="bg-orange"] {
+    background: white !important;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+
+  /* Show full URL after links */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    font-weight: normal;
+    color: #555;
+    word-break: break-all;
+  }
+
+  /* Keep internal links clean */
+  a[href^="/"]::after,
+  a[href^="#"]::after {
+    content: none;
+  }
+
+  /* Readable font sizes */
+  body {
+    font-size: 12pt !important;
+    line-height: 1.5 !important;
+  }
+
+  h1 {
+    font-size: 20pt !important;
+  }
+
+  h2 {
+    font-size: 16pt !important;
+  }
+
+  h3 {
+    font-size: 14pt !important;
+  }
+
+  /* Prevent page breaks inside cards and result blocks */
+  [class*="card"],
+  [class*="result"],
+  article,
+  tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Ensure links are visible as text */
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+}
+
 /* Calculator input styling */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {

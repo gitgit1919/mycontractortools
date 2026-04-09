@@ -397,6 +397,14 @@ const allCalculators: Calculator[] = [
     category: "Business",
     tags: ["markup", "margin", "profit", "pricing", "selling price", "percentage", "bid"],
   },
+  {
+    name: "Unit Converter",
+    href: "/calculators/unit-converter/",
+    description: "Convert between construction units — feet, meters, inches, yards, gallons, liters, and more.",
+    icon: "🔄",
+    category: "General",
+    tags: ["unit", "converter", "feet", "meters", "inches", "yards", "gallons", "liters", "conversion"],
+  },
 ];
 
 const categories = ["All", ...Array.from(new Set(allCalculators.map((c) => c.category)))];
