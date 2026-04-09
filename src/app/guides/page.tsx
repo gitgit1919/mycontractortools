@@ -17,6 +17,38 @@ const guides = [
     tag: "Most Popular",
   },
   {
+    title: "How to Start an HVAC Business (2026)",
+    href: "/guides/starting-an-hvac-business/",
+    description:
+      "EPA 608 certification, essential tools ($15K–$30K), pricing service calls, landing maintenance agreements, and scaling from solo tech to full crew.",
+    icon: "🌡️",
+    tag: "Trade Guide",
+  },
+  {
+    title: "How to Start a Plumbing Business (2026)",
+    href: "/guides/starting-a-plumbing-business/",
+    description:
+      "Apprenticeship path, licensing, essential tools ($10K–$25K), pricing plumbing services, emergency call marketing, and adding specialties like gas fitting.",
+    icon: "🔧",
+    tag: "Trade Guide",
+  },
+  {
+    title: "How to Start an Electrical Business (2026)",
+    href: "/guides/starting-an-electrical-business/",
+    description:
+      "Licensing path from apprentice to master, tools ($8K–$20K), pricing electrical work, EV charger opportunities, and scaling to commercial contracts.",
+    icon: "⚡",
+    tag: "Trade Guide",
+  },
+  {
+    title: "How Much Does a Roof Replacement Cost? (2026)",
+    href: "/guides/roof-replacement-cost/",
+    description:
+      "National averages, cost by material type (asphalt to slate), hidden costs to watch for, and how to save money on your roof replacement.",
+    icon: "🏠",
+    tag: "Cost Guide",
+  },
+  {
     title: "Contractor Software Buyer's Guide (2026)",
     href: "/guides/contractor-software-buyers-guide/",
     description:

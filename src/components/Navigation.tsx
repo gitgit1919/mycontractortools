@@ -26,6 +26,8 @@ const softwareReviews = [
   { name: "Best GC Software", href: "/best/general-contractor-software/" },
   { name: "Best Painting Software", href: "/best/painting-software/" },
   { name: "Best Flooring Software", href: "/best/flooring-software/" },
+  { name: "Best Concrete Software", href: "/best/concrete-contractor-software/" },
+  { name: "Best Pest Control Software", href: "/best/pest-control-software/" },
 ];
 
 const comparisons = [
@@ -35,6 +37,8 @@ const comparisons = [
   { name: "Buildertrend vs CoConstruct", href: "/compare/buildertrend-vs-coconstruct/" },
   { name: "Jobber vs FieldEdge", href: "/compare/jobber-vs-fieldedge/" },
   { name: "Jobber vs JobNimbus", href: "/compare/jobber-vs-jobnimbus/" },
+  { name: "ServiceTitan vs FieldEdge", href: "/compare/servicetitan-vs-fieldedge/" },
+  { name: "HCP vs JobNimbus", href: "/compare/housecall-pro-vs-jobnimbus/" },
 ];
 
 export default function Navigation() {
