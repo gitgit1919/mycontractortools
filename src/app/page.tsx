@@ -91,8 +91,8 @@ export default function Home() {
             <span className="text-brand-orange"> Contractors</span>
           </h1>
           <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto mb-8 leading-relaxed">
-            HVAC load, electrical load, concrete, roofing, plumbing, and more.
-            Built for tradespeople, by people who understand the trades.
+            47+ free calculators for every trade — concrete, HVAC, electrical, roofing, plumbing, carpentry, and more.
+            Plus honest software reviews and business guides.
           </p>
           <Link
             href="#calculators"
@@ -151,11 +151,94 @@ export default function Home() {
               </div>
             </div>
           ))}
+          <div className="text-center mt-8">
+            <Link
+              href="/calculators/"
+              className="inline-block bg-brand-blue hover:bg-brand-blue/90 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+            >
+              View All 47+ Calculators
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Software Reviews */}
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-brand-blue mb-2">
+            Software Reviews & Comparisons
+          </h2>
+          <p className="text-gray-600 mb-6">
+            Honest, trade-specific reviews of the top field service management tools — with real pricing.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            {[
+              { name: "Best HVAC Software", href: "/best/hvac-software/", icon: "🌡️" },
+              { name: "Best Plumbing Software", href: "/best/plumbing-software/", icon: "🔧" },
+              { name: "Best Electrical Contractor Software", href: "/best/electrical-contractor-software/", icon: "⚡" },
+              { name: "Best Roofing Software", href: "/best/roofing-software/", icon: "🏠" },
+              { name: "Best Landscaping Software", href: "/best/landscaping-software/", icon: "🌿" },
+              { name: "Best General Contractor Software", href: "/best/general-contractor-software/", icon: "🏗️" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group flex items-center gap-3 bg-white border border-gray-200 rounded-xl p-4 hover:border-brand-orange hover:shadow-md transition-all"
+              >
+                <span className="text-2xl" aria-hidden="true">{item.icon}</span>
+                <span className="font-semibold text-brand-blue group-hover:text-brand-orange transition-colors">
+                  {item.name}
+                </span>
+              </Link>
+            ))}
+          </div>
+          <h3 className="text-lg font-bold text-brand-blue mb-3">Head-to-Head Comparisons</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { name: "Jobber vs Housecall Pro", href: "/compare/jobber-vs-housecall-pro/" },
+              { name: "ServiceTitan vs Housecall Pro", href: "/compare/servicetitan-vs-housecall-pro/" },
+              { name: "Jobber vs ServiceTitan", href: "/compare/jobber-vs-servicetitan/" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group block bg-brand-gray border border-gray-200 rounded-xl p-4 hover:border-brand-orange hover:shadow-md transition-all text-center"
+              >
+                <span className="font-semibold text-brand-blue group-hover:text-brand-orange transition-colors">
+                  {item.name}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Guides */}
+      <section className="py-12 sm:py-16 bg-brand-gray">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-brand-blue mb-2">
+            Free Contractor Guides
+          </h2>
+          <p className="text-gray-600 mb-6">
+            Practical guides to help you start, run, and grow your contracting business.
+          </p>
+          <Link
+            href="/guides/starting-a-contracting-business/"
+            className="group block bg-white border border-gray-200 rounded-xl p-6 hover:border-brand-orange hover:shadow-md transition-all max-w-2xl"
+          >
+            <span className="text-3xl mb-2 block" aria-hidden="true">🚀</span>
+            <h3 className="font-bold text-lg text-brand-blue group-hover:text-brand-orange transition-colors mb-2">
+              How to Start a Contracting Business (Complete Guide)
+            </h3>
+            <p className="text-sm text-gray-600">
+              Everything you need — licensing, LLC formation, insurance, pricing your work, getting customers, and building systems that scale.
+            </p>
+          </Link>
         </div>
       </section>
 
       {/* Email capture */}
-      <section className="py-12 bg-brand-gray">
+      <section className="py-12 bg-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <EmailCapture />
         </div>

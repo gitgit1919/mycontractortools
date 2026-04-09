@@ -17,9 +17,25 @@ const calculators = [
   { name: "Hourly Rate Calculator", href: "/calculators/hourly-rate/" },
 ];
 
+const softwareReviews = [
+  { name: "Best HVAC Software", href: "/best/hvac-software/" },
+  { name: "Best Plumbing Software", href: "/best/plumbing-software/" },
+  { name: "Best Electrical Software", href: "/best/electrical-contractor-software/" },
+  { name: "Best Roofing Software", href: "/best/roofing-software/" },
+  { name: "Best Landscaping Software", href: "/best/landscaping-software/" },
+  { name: "Best GC Software", href: "/best/general-contractor-software/" },
+];
+
+const comparisons = [
+  { name: "Jobber vs Housecall Pro", href: "/compare/jobber-vs-housecall-pro/" },
+  { name: "ServiceTitan vs Housecall Pro", href: "/compare/servicetitan-vs-housecall-pro/" },
+  { name: "Jobber vs ServiceTitan", href: "/compare/jobber-vs-servicetitan/" },
+];
+
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [calcDropdownOpen, setCalcDropdownOpen] = useState(false);
+  const [reviewsDropdownOpen, setReviewsDropdownOpen] = useState(false);
 
   return (
     <nav className="bg-brand-blue text-white" role="navigation" aria-label="Main navigation">
@@ -46,6 +62,13 @@ export default function Navigation() {
               </button>
               {calcDropdownOpen && (
                 <div className="absolute top-full left-0 mt-2 w-72 bg-white text-gray-900 rounded-lg shadow-xl py-2 z-50">
+                  <Link
+                    href="/calculators/"
+                    className="block px-4 py-2 hover:bg-gray-100 text-sm font-semibold text-brand-orange"
+                  >
+                    All Calculators →
+                  </Link>
+                  <hr className="my-1" />
                   {calculators.map((calc) => (
                     <Link
                       key={calc.href}
@@ -58,6 +81,48 @@ export default function Navigation() {
                 </div>
               )}
             </div>
+            <div className="relative">
+              <button
+                onClick={() => setReviewsDropdownOpen(!reviewsDropdownOpen)}
+                onBlur={() => setTimeout(() => setReviewsDropdownOpen(false), 200)}
+                className="flex items-center gap-1 hover:text-brand-orange transition-colors"
+                aria-expanded={reviewsDropdownOpen}
+                aria-haspopup="true"
+              >
+                Software Reviews
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {reviewsDropdownOpen && (
+                <div className="absolute top-full left-0 mt-2 w-72 bg-white text-gray-900 rounded-lg shadow-xl py-2 z-50">
+                  <p className="px-4 py-1 text-xs text-gray-400 uppercase tracking-wider">Best Software By Trade</p>
+                  {softwareReviews.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block px-4 py-2 hover:bg-gray-100 text-sm"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                  <hr className="my-1" />
+                  <p className="px-4 py-1 text-xs text-gray-400 uppercase tracking-wider">Head-to-Head</p>
+                  {comparisons.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block px-4 py-2 hover:bg-gray-100 text-sm"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+            <Link href="/guides/" className="hover:text-brand-orange transition-colors text-sm">
+              Guides
+            </Link>
             <Link href="/affiliate-disclosure/" className="hover:text-brand-orange transition-colors text-sm">
               About
             </Link>
@@ -95,6 +160,39 @@ export default function Navigation() {
               {calc.name}
             </Link>
           ))}
+          <hr className="border-white/20 my-3" />
+          <p className="text-xs uppercase tracking-wider text-white/60 mb-2">Best Software By Trade</p>
+          {softwareReviews.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="block py-2 text-sm hover:text-brand-orange transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {item.name}
+            </Link>
+          ))}
+          <hr className="border-white/20 my-3" />
+          <p className="text-xs uppercase tracking-wider text-white/60 mb-2">Comparisons</p>
+          {comparisons.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="block py-2 text-sm hover:text-brand-orange transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {item.name}
+            </Link>
+          ))}
+          <hr className="border-white/20 my-3" />
+          <p className="text-xs uppercase tracking-wider text-white/60 mb-2">Guides</p>
+          <Link
+            href="/guides/starting-a-contracting-business/"
+            className="block py-2 text-sm hover:text-brand-orange transition-colors"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            How to Start a Contracting Business
+          </Link>
         </div>
       )}
     </nav>
