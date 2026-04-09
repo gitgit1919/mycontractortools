@@ -91,8 +91,8 @@ export default function Home() {
             <span className="text-brand-orange"> Contractors</span>
           </h1>
           <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto mb-8 leading-relaxed">
-            47+ free calculators for every trade — concrete, HVAC, electrical, roofing, plumbing, carpentry, and more.
-            Plus honest software reviews and business guides.
+            86+ free calculators and tools for every trade — concrete, HVAC, electrical, roofing, plumbing, carpentry, and more.
+            Plus honest software reviews, cost guides, and business resources.
           </p>
           <Link
             href="#calculators"
@@ -156,7 +156,7 @@ export default function Home() {
               href="/calculators/"
               className="inline-block bg-brand-blue hover:bg-brand-blue/90 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
             >
-              View All 47+ Calculators
+              View All 86+ Calculators
             </Link>
           </div>
         </div>
@@ -166,55 +166,133 @@ export default function Home() {
       <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-brand-blue mb-2">
-            Software Reviews & Comparisons
+            Find the Right Software for Your Trade
           </h2>
-          <p className="text-gray-600 mb-6">
-            Honest, trade-specific reviews of the top field service management tools — with real pricing.
+          <p className="text-gray-600 mb-8">
+            We&apos;ve tested and compared the top contractor software so you don&apos;t have to.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {[
-              { name: "Best HVAC Software", href: "/best/hvac-software/", icon: "🌡️" },
-              { name: "Best Plumbing Software", href: "/best/plumbing-software/", icon: "🔧" },
-              { name: "Best Electrical Contractor Software", href: "/best/electrical-contractor-software/", icon: "⚡" },
-              { name: "Best Roofing Software", href: "/best/roofing-software/", icon: "🏠" },
-              { name: "Best Landscaping Software", href: "/best/landscaping-software/", icon: "🌿" },
-              { name: "Best General Contractor Software", href: "/best/general-contractor-software/", icon: "🏗️" },
+              {
+                name: "Best HVAC Software",
+                href: "/best/hvac-software/",
+                icon: "🌡️",
+                description: "Top-rated software for HVAC contractors — scheduling, dispatching, and invoicing.",
+              },
+              {
+                name: "Best Plumbing Software",
+                href: "/best/plumbing-software/",
+                icon: "🔧",
+                description: "Field service tools built for plumbing companies of all sizes.",
+              },
+              {
+                name: "Best Roofing Software",
+                href: "/best/roofing-software/",
+                icon: "🏠",
+                description: "Manage estimates, crews, and materials with roofing-specific platforms.",
+              },
+              {
+                name: "Best Electrical Contractor Software",
+                href: "/best/electrical-contractor-software/",
+                icon: "⚡",
+                description: "Streamline bids, jobs, and billing for electrical contractors.",
+              },
+              {
+                name: "Best General Contractor Software",
+                href: "/best/general-contractor-software/",
+                icon: "🏗️",
+                description: "Project management and job costing tools for general contractors.",
+              },
             ].map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="group flex items-center gap-3 bg-white border border-gray-200 rounded-xl p-4 hover:border-brand-orange hover:shadow-md transition-all"
+                className="group block bg-brand-gray border border-gray-200 rounded-xl p-5 hover:border-brand-orange hover:shadow-md transition-all"
               >
-                <span className="text-2xl" aria-hidden="true">{item.icon}</span>
-                <span className="font-semibold text-brand-blue group-hover:text-brand-orange transition-colors">
+                <div className="text-2xl mb-2" aria-hidden="true">{item.icon}</div>
+                <h3 className="font-semibold text-brand-blue group-hover:text-brand-orange transition-colors mb-1">
                   {item.name}
+                </h3>
+                <p className="text-sm text-gray-600 mb-3">{item.description}</p>
+                <span className="text-sm font-semibold text-brand-orange">
+                  Read Review &rarr;
                 </span>
               </Link>
             ))}
           </div>
-          <h3 className="text-lg font-bold text-brand-blue mb-3">Head-to-Head Comparisons</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="text-center">
+            <Link
+              href="/best/"
+              className="text-brand-orange hover:text-brand-orange-dark font-semibold transition-colors"
+            >
+              View All 10 Software Reviews &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Cost Guides */}
+      <section className="py-12 sm:py-16 bg-brand-gray">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-brand-blue mb-2">
+            How Much Does It Cost?
+          </h2>
+          <p className="text-gray-600 mb-8">
+            Transparent pricing guides to help homeowners budget and contractors price fairly.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {[
-              { name: "Jobber vs Housecall Pro", href: "/compare/jobber-vs-housecall-pro/" },
-              { name: "ServiceTitan vs Housecall Pro", href: "/compare/servicetitan-vs-housecall-pro/" },
-              { name: "Jobber vs ServiceTitan", href: "/compare/jobber-vs-servicetitan/" },
+              {
+                name: "Roof Replacement Cost",
+                href: "/guides/roof-replacement-cost/",
+                icon: "🏠",
+                range: "$5,500 - $12,000+",
+              },
+              {
+                name: "HVAC Installation Cost",
+                href: "/guides/hvac-installation-cost/",
+                icon: "🌡️",
+                range: "$3,800 - $8,500+",
+              },
+              {
+                name: "Concrete Driveway Cost",
+                href: "/guides/concrete-driveway-cost/",
+                icon: "🏗️",
+                range: "$3,000 - $7,000+",
+              },
+              {
+                name: "Electrical Panel Upgrade Cost",
+                href: "/guides/electrical-panel-upgrade-cost/",
+                icon: "⚡",
+                range: "$1,500 - $4,000+",
+              },
             ].map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="group block bg-brand-gray border border-gray-200 rounded-xl p-4 hover:border-brand-orange hover:shadow-md transition-all text-center"
+                className="group block bg-white border border-gray-200 rounded-xl p-5 hover:border-brand-orange hover:shadow-md transition-all"
               >
-                <span className="font-semibold text-brand-blue group-hover:text-brand-orange transition-colors">
+                <div className="text-2xl mb-2" aria-hidden="true">{item.icon}</div>
+                <h3 className="font-semibold text-brand-blue group-hover:text-brand-orange transition-colors mb-1">
                   {item.name}
-                </span>
+                </h3>
+                <p className="text-sm text-gray-600 font-medium">{item.range}</p>
               </Link>
             ))}
+          </div>
+          <div className="text-center">
+            <Link
+              href="/guides/"
+              className="text-brand-orange hover:text-brand-orange-dark font-semibold transition-colors"
+            >
+              View All Cost Guides &rarr;
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Guides */}
-      <section className="py-12 sm:py-16 bg-brand-gray">
+      <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-brand-blue mb-2">
             Free Contractor Guides
@@ -224,7 +302,7 @@ export default function Home() {
           </p>
           <Link
             href="/guides/starting-a-contracting-business/"
-            className="group block bg-white border border-gray-200 rounded-xl p-6 hover:border-brand-orange hover:shadow-md transition-all max-w-2xl"
+            className="group block bg-brand-gray border border-gray-200 rounded-xl p-6 hover:border-brand-orange hover:shadow-md transition-all max-w-2xl"
           >
             <span className="text-3xl mb-2 block" aria-hidden="true">🚀</span>
             <h3 className="font-bold text-lg text-brand-blue group-hover:text-brand-orange transition-colors mb-2">
@@ -234,6 +312,46 @@ export default function Home() {
               Everything you need — licensing, LLC formation, insurance, pricing your work, getting customers, and building systems that scale.
             </p>
           </Link>
+        </div>
+      </section>
+
+      {/* Head-to-Head Comparisons */}
+      <section className="py-12 sm:py-16 bg-brand-gray">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-brand-blue mb-6">
+            Software Comparisons
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+            {[
+              { name: "Jobber vs Housecall Pro", href: "/compare/jobber-vs-housecall-pro/" },
+              { name: "ServiceTitan vs Housecall Pro", href: "/compare/servicetitan-vs-housecall-pro/" },
+              { name: "Jobber vs ServiceTitan", href: "/compare/jobber-vs-servicetitan/" },
+              { name: "Buildertrend vs CoConstruct", href: "/compare/buildertrend-vs-coconstruct/" },
+              { name: "Jobber vs FieldEdge", href: "/compare/jobber-vs-fieldedge/" },
+              { name: "ServiceTitan vs FieldEdge", href: "/compare/servicetitan-vs-fieldedge/" },
+              { name: "Jobber vs JobNimbus", href: "/compare/jobber-vs-jobnimbus/" },
+              { name: "Housecall Pro vs JobNimbus", href: "/compare/housecall-pro-vs-jobnimbus/" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group flex items-center gap-2 py-3 px-4 bg-white border border-gray-200 rounded-lg hover:border-brand-orange hover:shadow-sm transition-all"
+              >
+                <span className="text-brand-orange" aria-hidden="true">&#x2194;</span>
+                <span className="font-semibold text-brand-blue group-hover:text-brand-orange transition-colors">
+                  {item.name}
+                </span>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center">
+            <Link
+              href="/compare/"
+              className="text-brand-orange hover:text-brand-orange-dark font-semibold transition-colors"
+            >
+              View All 8 Comparisons &rarr;
+            </Link>
+          </div>
         </div>
       </section>
 
