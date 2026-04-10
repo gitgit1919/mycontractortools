@@ -90,6 +90,24 @@ const alternatives = [
     description:
       "Accounting and job-costing tools built specifically for the trades.",
   },
+  {
+    title: "FieldEdge Alternatives",
+    href: "/compare/fieldedge-alternatives/",
+    description:
+      "Simpler, cheaper options for HVAC and plumbing shops outgrowing FieldEdge.",
+  },
+  {
+    title: "JobNimbus Alternatives",
+    href: "/compare/jobnimbus-alternatives/",
+    description:
+      "Roofing and general-purpose platforms for contractors exploring beyond JobNimbus.",
+  },
+  {
+    title: "Procore Alternatives",
+    href: "/compare/procore-alternatives/",
+    description:
+      "Project management tools for builders who don't need enterprise-grade Procore.",
+  },
 ];
 
 export default function CompareIndex() {

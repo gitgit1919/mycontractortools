@@ -278,26 +278,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mycontractortools.com/guides/bathroom-remodel-cost/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://mycontractortools.com/guides/deck-building-cost/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://mycontractortools.com/guides/fence-installation-cost/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://mycontractortools.com/guides/interior-painting-cost/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://mycontractortools.com/guides/starting-a-roofing-business/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -313,21 +293,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mycontractortools.com/guides/hvac-installation-cost/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://mycontractortools.com/guides/concrete-driveway-cost/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://mycontractortools.com/guides/electrical-panel-upgrade-cost/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://mycontractortools.com/guides/starting-an-hvac-business/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -339,11 +304,6 @@
   </url>
   <url>
     <loc>https://mycontractortools.com/guides/starting-an-electrical-business/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://mycontractortools.com/guides/roof-replacement-cost/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -470,8 +430,38 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://mycontractortools.com/compare/fieldedge-alternatives/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mycontractortools.com/compare/jobnimbus-alternatives/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mycontractortools.com/compare/procore-alternatives/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://mycontractortools.com/compare/</loc>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mycontractortools.com/best/solar-contractor-software/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mycontractortools.com/best/cleaning-business-software/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mycontractortools.com/best/fencing-contractor-software/</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>

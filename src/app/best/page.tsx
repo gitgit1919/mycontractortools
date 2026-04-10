@@ -78,6 +78,27 @@ const trades = [
       "Route management, chemical tracking, and recurring-service automation for pest control operators.",
     icon: "🐛",
   },
+  {
+    title: "Best Solar Contractor Software",
+    href: "/best/solar-contractor-software/",
+    description:
+      "Solar design, shade analysis, proposal generation, and financing tools for solar installers.",
+    icon: "☀️",
+  },
+  {
+    title: "Best Cleaning Business Software",
+    href: "/best/cleaning-business-software/",
+    description:
+      "Recurring scheduling, team management, online booking, and client portals for cleaning companies.",
+    icon: "🧹",
+  },
+  {
+    title: "Best Fencing Contractor Software",
+    href: "/best/fencing-contractor-software/",
+    description:
+      "Estimating, scheduling, material tracking, and photo documentation for fence contractors.",
+    icon: "🏡",
+  },
 ];
 
 export default function BestSoftwareIndex() {

@@ -28,6 +28,9 @@ const softwareReviews = [
   { name: "Best Flooring Software", href: "/best/flooring-software/" },
   { name: "Best Concrete Software", href: "/best/concrete-contractor-software/" },
   { name: "Best Pest Control Software", href: "/best/pest-control-software/" },
+  { name: "Best Solar Software", href: "/best/solar-contractor-software/" },
+  { name: "Best Cleaning Software", href: "/best/cleaning-business-software/" },
+  { name: "Best Fencing Software", href: "/best/fencing-contractor-software/" },
 ];
 
 const comparisons = [

@@ -977,25 +977,12 @@ export default function StartingFlooringBusiness() {
         </p>
       </div>
 
-      {/* Cross-promotion for homeowners */}
-      <div className="bg-orange-50 border border-brand-orange rounded-xl p-6 my-8">
-        <h3 className="text-xl font-bold text-brand-blue mb-2">
-          Are You a Homeowner Looking for a Flooring Installer?
-        </h3>
-        <p className="text-gray-700 mb-4">
-          If you landed on this page looking for flooring help for your
-          home, we can connect you with licensed flooring contractors in
-          your area. Get free quotes from pre-screened professionals.
-        </p>
-        <a
-          href="https://getcontractorquotes.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-brand-orange hover:bg-brand-orange-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors"
-        >
-          Get Free Flooring Quotes at GetContractorQuotes.com
-        </a>
-      </div>
+      <p className="text-sm text-gray-500 my-4">
+        Are you a homeowner looking for help with a project?{" "}
+        <a href="https://getcontractorquotes.com" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">
+          Get free quotes from licensed contractors in your area
+        </a>.
+      </p>
 
       {/* Internal links */}
       <div className="bg-white border border-gray-200 rounded-xl p-5 my-6">

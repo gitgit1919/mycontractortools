@@ -41,14 +41,6 @@ const guides = [
     tag: "Trade Guide",
   },
   {
-    title: "How Much Does a Roof Replacement Cost? (2026)",
-    href: "/guides/roof-replacement-cost/",
-    description:
-      "National averages, cost by material type (asphalt to slate), hidden costs to watch for, and how to save money on your roof replacement.",
-    icon: "🏠",
-    tag: "Cost Guide",
-  },
-  {
     title: "How to Start a Roofing Business (2026)",
     href: "/guides/starting-a-roofing-business/",
     description:
@@ -73,30 +65,6 @@ const guides = [
     tag: "Trade Guide",
   },
   {
-    title: "How Much Does HVAC Installation Cost? (2026)",
-    href: "/guides/hvac-installation-cost/",
-    description:
-      "Central AC, furnace, heat pump, and mini-split costs by system type and home size. Tax credits, rebates, and how to save.",
-    icon: "❄️",
-    tag: "Cost Guide",
-  },
-  {
-    title: "How Much Does a Concrete Driveway Cost? (2026)",
-    href: "/guides/concrete-driveway-cost/",
-    description:
-      "Standard, stamped, and colored concrete costs per square foot. Compare to asphalt, pavers, and gravel alternatives.",
-    icon: "🚗",
-    tag: "Cost Guide",
-  },
-  {
-    title: "How Much Does an Electrical Panel Upgrade Cost? (2026)",
-    href: "/guides/electrical-panel-upgrade-cost/",
-    description:
-      "200-amp panel upgrade costs, EV charger considerations, permit requirements, and why you should never DIY electrical panel work.",
-    icon: "🔌",
-    tag: "Cost Guide",
-  },
-  {
     title: "How to Start a Flooring Business (2026)",
     href: "/guides/starting-a-flooring-business/",
     description:
@@ -111,38 +79,6 @@ const guides = [
       "ACI certifications, heavy equipment ($15K–$40K), flatwork and decorative pricing, weather considerations, and scaling to commercial.",
     icon: "🏗️",
     tag: "Trade Guide",
-  },
-  {
-    title: "How Much Does a Bathroom Remodel Cost? (2026)",
-    href: "/guides/bathroom-remodel-cost/",
-    description:
-      "Budget ($5K–$15K) to high-end ($30K–$75K+) bathroom remodel costs, ROI at resale, and where to save money.",
-    icon: "🚿",
-    tag: "Cost Guide",
-  },
-  {
-    title: "How Much Does It Cost to Build a Deck? (2026)",
-    href: "/guides/deck-building-cost/",
-    description:
-      "Pressure-treated vs composite costs, deck size pricing, deck vs patio comparison, and hidden costs to watch for.",
-    icon: "🪜",
-    tag: "Cost Guide",
-  },
-  {
-    title: "How Much Does Fence Installation Cost? (2026)",
-    href: "/guides/fence-installation-cost/",
-    description:
-      "Wood, vinyl, chain link, and aluminum fence costs per linear foot. DIY vs professional and money-saving tips.",
-    icon: "🏡",
-    tag: "Cost Guide",
-  },
-  {
-    title: "How Much Does Interior Painting Cost? (2026)",
-    href: "/guides/interior-painting-cost/",
-    description:
-      "Per-room and per-sq-ft painting costs, paint quality comparison, prep work breakdown, and DIY vs hiring a pro.",
-    icon: "🖌️",
-    tag: "Cost Guide",
   },
   {
     title: "Contractor Software Buyer's Guide (2026)",

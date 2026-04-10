@@ -92,7 +92,7 @@ export default function Home() {
           </h1>
           <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto mb-8 leading-relaxed">
             86+ free calculators and tools for every trade — concrete, HVAC, electrical, roofing, plumbing, carpentry, and more.
-            Plus honest software reviews, cost guides, and business resources.
+            Plus honest software reviews, startup guides, and business resources.
           </p>
           <Link
             href="#calculators"
@@ -226,66 +226,6 @@ export default function Home() {
               className="text-brand-orange hover:text-brand-orange-dark font-semibold transition-colors"
             >
               View All 10 Software Reviews &rarr;
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Cost Guides */}
-      <section className="py-12 sm:py-16 bg-brand-gray">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-brand-blue mb-2">
-            How Much Does It Cost?
-          </h2>
-          <p className="text-gray-600 mb-8">
-            Transparent pricing guides to help homeowners budget and contractors price fairly.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            {[
-              {
-                name: "Roof Replacement Cost",
-                href: "/guides/roof-replacement-cost/",
-                icon: "🏠",
-                range: "$5,500 - $12,000+",
-              },
-              {
-                name: "HVAC Installation Cost",
-                href: "/guides/hvac-installation-cost/",
-                icon: "🌡️",
-                range: "$3,800 - $8,500+",
-              },
-              {
-                name: "Concrete Driveway Cost",
-                href: "/guides/concrete-driveway-cost/",
-                icon: "🏗️",
-                range: "$3,000 - $7,000+",
-              },
-              {
-                name: "Electrical Panel Upgrade Cost",
-                href: "/guides/electrical-panel-upgrade-cost/",
-                icon: "⚡",
-                range: "$1,500 - $4,000+",
-              },
-            ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="group block bg-white border border-gray-200 rounded-xl p-5 hover:border-brand-orange hover:shadow-md transition-all"
-              >
-                <div className="text-2xl mb-2" aria-hidden="true">{item.icon}</div>
-                <h3 className="font-semibold text-brand-blue group-hover:text-brand-orange transition-colors mb-1">
-                  {item.name}
-                </h3>
-                <p className="text-sm text-gray-600 font-medium">{item.range}</p>
-              </Link>
-            ))}
-          </div>
-          <div className="text-center">
-            <Link
-              href="/guides/"
-              className="text-brand-orange hover:text-brand-orange-dark font-semibold transition-colors"
-            >
-              View All Cost Guides &rarr;
             </Link>
           </div>
         </div>

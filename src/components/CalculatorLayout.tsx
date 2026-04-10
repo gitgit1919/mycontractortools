@@ -129,23 +129,19 @@ export default function CalculatorLayout({
         {children}
       </div>
 
-      {/* Get Quotes CTA */}
-      <div className="mb-8 bg-green-50 border border-green-200 rounded-xl p-5 flex flex-col sm:flex-row items-center gap-4">
-        <div className="flex-1">
-          <h3 className="font-bold text-green-800 mb-1">Need a Contractor?</h3>
-          <p className="text-sm text-green-700">
-            Get free quotes from licensed {trade.toLowerCase() !== "business" && trade.toLowerCase() !== "general" ? trade.toLowerCase() + " " : ""}contractors in your area. No obligation, no hassle.
-          </p>
-        </div>
+      {/* Get Quotes CTA - subtle, for homeowners */}
+      <p className="mb-8 text-sm text-gray-500">
+        Are you a homeowner looking for help with a project?{" "}
         <a
           href="https://getcontractorquotes.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors whitespace-nowrap text-sm"
+          className="text-brand-orange hover:underline"
         >
-          Get Free Quotes
+          Get free quotes from licensed {trade.toLowerCase() !== "business" && trade.toLowerCase() !== "general" ? trade.toLowerCase() + " " : ""}contractors in your area
         </a>
-      </div>
+        .
+      </p>
 
       <section className="mb-8" aria-labelledby="how-to-use">
         <h2 id="how-to-use" className="text-2xl font-bold text-brand-blue mb-3">
