@@ -186,6 +186,36 @@ const products: SoftwareProduct[] = [
       "Reporting",
     ],
   },
+  {
+    name: "ServiceM8",
+    rating: 4,
+    bestFor: "Small HVAC shops on iOS wanting a polished, low-volume alternative to Jobber ($0-$300K revenue, 1-4 techs)",
+    priceRange: "Free–$349",
+    pros: [
+      "Pricing scales with job volume, not user count — a 3-tech HVAC shop doing ~80 jobs/mo pays roughly $79/mo, well below Jobber or HCP at the same team size",
+      "Genuinely beautiful iOS app that techs actually enjoy using — job cards, checklists, photos, and customer signatures flow through one clean screen with no training overhead",
+      "Quotes and invoices look professional out of the box without template fiddling — branded PDFs land in the homeowner&rsquo;s inbox within 30 seconds of finishing the service call",
+      "Free tier (up to 20 jobs/mo) is actually usable for solo HVAC operators starting out — no upsell pressure, no credit card required to start",
+      "Job diary auto-logs every photo, email, text, and time entry against the job card — creates a complete service history on every unit without extra admin work",
+    ],
+    cons: [
+      "iOS-only for field techs — if any of your crew carries an Android phone, ServiceM8 is a non-starter, period",
+      "No built-in HVAC pricebook or flat-rate library — you build every quote from scratch, same limitation as Jobber and HCP",
+      "Weak maintenance agreement management — fine for repair tickets, but not the tool if recurring tune-up programs are your core revenue stream",
+      "Smaller US user base than Jobber or HCP — fewer YouTube tutorials, fewer peer support groups, support leans Australia timezone",
+      "Reporting is basic — job counts, revenue, and tech stats, but no deep margin or per-service profitability analysis",
+    ],
+    features: [
+      "iOS-first mobile app",
+      "Job card workflow",
+      "Quotes + invoices",
+      "Customer signatures",
+      "Photo documentation",
+      "Job diary + audit trail",
+      "Payment processing",
+      "Xero + QuickBooks sync",
+    ],
+  },
 ];
 
 export default function BestHVACSoftware() {

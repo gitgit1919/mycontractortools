@@ -153,7 +153,7 @@ export default function BuyersGuide() {
           },
           {
             name: "Project Management / Construction",
-            examples: "Buildertrend, CoConstruct, Procore",
+            examples: "Buildertrend, Contractor Foreman, Procore",
             desc: "Job costing, change orders, subcontractor management, client portal, selections. Built for longer-duration projects.",
             who: "General contractors, remodelers, custom home builders",
           },

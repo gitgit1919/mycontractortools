@@ -185,6 +185,36 @@ const products: SoftwareProduct[] = [
       "Cloud storage",
     ],
   },
+  {
+    name: "ServiceM8",
+    rating: 4,
+    bestFor: "Small electrical shops on iOS wanting a polished, low-volume alternative to Jobber ($0-$300K revenue, 1-4 electricians)",
+    priceRange: "Free–$349",
+    pros: [
+      "Pricing scales with job volume, not user count — a 3-electrician shop doing ~80 jobs/mo pays roughly $79/mo, well below Jobber or HCP at the same team size",
+      "Genuinely beautiful iOS app that electricians actually enjoy using — job cards, checklists, panel photos, and customer signatures all in one clean flow with almost no training overhead",
+      "Photo documentation is strong for panel work, rough-in, and pre-cover inspections — every job card stores time-stamped photos that protect you if a warranty dispute arises",
+      "Quotes and invoices look professional out of the box without template fiddling — branded PDFs land in the customer&rsquo;s inbox within 30 seconds of finishing the call",
+      "Free tier (up to 20 jobs/mo) is actually usable for solo electricians starting out — no upsell pressure, no credit card required to begin",
+    ],
+    cons: [
+      "iOS-only for field techs — if any of your crew carries an Android phone, ServiceM8 is a non-starter, period",
+      "No built-in electrical pricebook, circuit calculator, or NEC code reference — you build every quote from scratch, same limitation as Jobber and HCP",
+      "Weak permit and inspection tracking — no purpose-built workflow for rough-in / service / final inspection milestones that electrical work demands",
+      "Smaller US user base than Jobber or HCP — fewer YouTube tutorials, fewer peer support groups, and support leans Australia timezone",
+      "Reporting is basic — job counts, revenue, and tech stats, but no deep margin or per-service profitability analysis",
+    ],
+    features: [
+      "iOS-first mobile app",
+      "Job card workflow",
+      "Quotes + invoices",
+      "Customer signatures",
+      "Photo documentation",
+      "Job diary + audit trail",
+      "Payment processing",
+      "Xero + QuickBooks sync",
+    ],
+  },
 ];
 
 export default function BestElectricalContractorSoftware() {

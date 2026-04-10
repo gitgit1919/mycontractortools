@@ -186,6 +186,36 @@ const products: SoftwareProduct[] = [
       "Basic reporting",
     ],
   },
+  {
+    name: "ServiceM8",
+    rating: 4,
+    bestFor: "Small plumbing shops on iOS wanting a polished, low-volume alternative to Jobber ($0-$300K revenue, 1-4 plumbers)",
+    priceRange: "Free–$349",
+    pros: [
+      "Pricing scales with job volume, not user count — a 3-plumber shop doing ~80 jobs/mo pays roughly $79/mo, well below Jobber or HCP at the same team size",
+      "Genuinely beautiful iOS app that plumbers actually enjoy using — job cards, checklists, on-site photos, and customer signatures all in one clean flow with almost no training overhead",
+      "Quotes and invoices look professional out of the box without template fiddling — branded PDFs land in the customer&rsquo;s inbox within 30 seconds of finishing the call",
+      "Free tier (up to 20 jobs/mo) is actually usable for solo plumbers starting out — no upsell pressure, no credit card required to begin",
+      "Job diary auto-logs every photo, email, text, and time entry against the job card — creates a complete paper trail for warranty claims and callbacks without extra admin",
+    ],
+    cons: [
+      "iOS-only for field techs — if any of your crew carries an Android phone, ServiceM8 is a non-starter, period",
+      "No built-in plumbing pricebook or flat-rate library — you build every quote from scratch, same limitation as Jobber and HCP",
+      "Weak recurring service and maintenance plan management — fine for repair calls, but not the tool if preventive plans are a core part of your model",
+      "Smaller US user base than Jobber or HCP — fewer YouTube tutorials, fewer peer support groups, and support leans Australia timezone",
+      "Reporting is basic — job counts, revenue, and tech stats, but no deep margin or per-service profitability analysis",
+    ],
+    features: [
+      "iOS-first mobile app",
+      "Job card workflow",
+      "Quotes + invoices",
+      "Customer signatures",
+      "Photo documentation",
+      "Job diary + audit trail",
+      "Payment processing",
+      "Xero + QuickBooks sync",
+    ],
+  },
 ];
 
 export default function BestPlumbingSoftware() {

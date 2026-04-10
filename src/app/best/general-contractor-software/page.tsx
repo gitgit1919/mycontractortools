@@ -4,7 +4,7 @@ import ComparisonLayout, { SoftwareProduct } from "@/components/ComparisonLayout
 export const metadata: Metadata = {
   title: "Best General Contractor Software (2026) — Top 6 Picks Compared",
   description:
-    "Compare the best general contractor software for remodelers, builders, and commercial GCs. We reviewed Buildertrend, Jobber, CoConstruct, Procore, Housecall Pro, and FieldPulse on pricing, features, and real-world fit.",
+    "Compare the best general contractor software for remodelers, builders, and commercial GCs. We reviewed Buildertrend, Jobber, Contractor Foreman, Procore, Housecall Pro, and FieldPulse on pricing, features, and real-world fit.",
 };
 
 const products: SoftwareProduct[] = [
@@ -69,33 +69,33 @@ const products: SoftwareProduct[] = [
     ],
   },
   {
-    name: "CoConstruct",
+    name: "Contractor Foreman",
     rating: 4,
-    bestFor: "Custom home builders and high-end remodelers ($1M-$5M revenue)",
-    priceRange: "$99+",
+    bestFor: "Budget-conscious GCs who need construction features without Buildertrend pricing ($200K-$1M revenue)",
+    priceRange: "$49–$148",
     pros: [
-      "Selection sheet management is the best in the category — clients choose finishes, fixtures, and allowances through a portal with photos and pricing attached",
-      "Detailed specification tracking for custom builds — every decision documented and linked to the budget so nothing falls through the cracks",
-      "Integrated estimating tied directly to project budgets — change an estimate line item and the budget updates in real time",
-      "Client decision tracking shows exactly which selections are pending, approved, or overdue — no more chasing homeowners for answers",
-      "Strong warranty tracking after project completion — log claims and schedule callbacks without a separate system",
+      "Flat-rate pricing covers unlimited users on every plan — $49-$148/mo no matter if you have 3 or 30 people in the system, unlike per-user platforms that scale painfully with crew size",
+      "Includes budgeting, job costing, change orders, daily logs, safety meetings, RFIs, submittals, and punch lists in the base plan — real construction features at field-service prices",
+      "Unlimited users means you can give every foreman, sub, and bookkeeper access without worrying about per-seat costs — huge for shops that want transparency without the per-seat bill",
+      "Strong daily log and safety meeting tracking with built-in OSHA-style forms that most competitors charge extra for or do not include at all",
+      "Active development with frequent feature updates and responsive live-chat support — the roadmap is visible and customer requests actually land",
     ],
     cons: [
-      "Narrowly focused on custom residential construction — poor fit for commercial GCs or service-oriented businesses",
-      "Interface feels dated compared to Buildertrend and can be complex for simple projects",
-      "Mobile app for field teams is weaker than competitors — office-heavy platform that requires your PM to drive it",
-      "Fewer third-party integrations — limited options for accounting software beyond QuickBooks",
-      "Sub management is less robust than Buildertrend or Procore — better for managing the build than managing the subs",
+      "Interface is functional but dated — feels like a database front-end, not a polished modern app like Buildertrend or Jobber",
+      "Mobile app is less refined than Buildertrend — works but occasionally lags and can sync unreliably on spotty job site connections",
+      "Client portal is basic — fewer self-service features and less polish than Buildertrend&rsquo;s client experience, so residential clients may notice the difference",
+      "Integrations are limited compared to top-tier platforms — QuickBooks works, but fewer third-party connections than Buildertrend or Procore",
+      "Smaller user community means fewer YouTube tutorials, templates, and peer support than the bigger names in this list",
     ],
     features: [
-      "Client selections",
-      "Specifications",
-      "Estimating",
-      "Budgeting",
-      "Scheduling",
-      "Client portal",
+      "Unlimited users",
+      "Budgeting + job costing",
       "Change orders",
-      "Warranty tracking",
+      "Daily logs + safety",
+      "RFIs + submittals",
+      "Punch lists",
+      "Client portal",
+      "QuickBooks sync",
     ],
   },
   {
@@ -251,7 +251,7 @@ export default function BestGeneralContractorSoftware() {
                 every job is the difference between 15% margin and 5%.
               </p>
               <p className="text-sm font-semibold text-brand-blue">
-                Best fit: Buildertrend ($99-399/mo) or CoConstruct ($99+/mo)
+                Best fit: Buildertrend ($99-399/mo) or Contractor Foreman ($49-148/mo, unlimited users)
               </p>
             </div>
 
@@ -483,7 +483,7 @@ export default function BestGeneralContractorSoftware() {
               <div className="flex flex-wrap gap-2 text-xs">
                 <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">Procore: Full sub portal + prequalification</span>
                 <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">Buildertrend: Sub scheduling + notifications</span>
-                <span className="bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded">CoConstruct: Basic sub coordination</span>
+                <span className="bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded">Contractor Foreman: Sub scheduling + directory</span>
                 <span className="bg-red-100 text-red-800 px-2 py-0.5 rounded">Jobber: No sub management</span>
                 <span className="bg-red-100 text-red-800 px-2 py-0.5 rounded">Housecall Pro: No sub management</span>
               </div>
@@ -501,7 +501,7 @@ export default function BestGeneralContractorSoftware() {
               <div className="flex flex-wrap gap-2 text-xs">
                 <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">Buildertrend: Full CO workflow + approval</span>
                 <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">Procore: Commercial-grade CO tracking</span>
-                <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">CoConstruct: CO with budget integration</span>
+                <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">Contractor Foreman: CO in base plan</span>
                 <span className="bg-red-100 text-red-800 px-2 py-0.5 rounded">Jobber: No change orders</span>
                 <span className="bg-red-100 text-red-800 px-2 py-0.5 rounded">FieldPulse: No change orders</span>
               </div>
@@ -517,8 +517,8 @@ export default function BestGeneralContractorSoftware() {
                 Without this, you are managing selections through text messages and emails.
               </p>
               <div className="flex flex-wrap gap-2 text-xs">
-                <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">CoConstruct: Best-in-class selections</span>
-                <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">Buildertrend: Good selections tracking</span>
+                <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">Buildertrend: Best-in-class selections (includes former CoConstruct workflows)</span>
+                <span className="bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded">Contractor Foreman: Basic selection tracking</span>
                 <span className="bg-red-100 text-red-800 px-2 py-0.5 rounded">Procore: Not built for selections</span>
                 <span className="bg-red-100 text-red-800 px-2 py-0.5 rounded">Jobber: Not available</span>
                 <span className="bg-red-100 text-red-800 px-2 py-0.5 rounded">FieldPulse: Not available</span>
@@ -536,7 +536,7 @@ export default function BestGeneralContractorSoftware() {
               </p>
               <div className="flex flex-wrap gap-2 text-xs">
                 <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">Buildertrend: Milestone-based invoicing</span>
-                <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">CoConstruct: Progress billing</span>
+                <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">Contractor Foreman: AIA-style progress billing</span>
                 <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">Procore: AIA pay applications</span>
                 <span className="bg-red-100 text-red-800 px-2 py-0.5 rounded">Jobber: Single invoices only</span>
                 <span className="bg-red-100 text-red-800 px-2 py-0.5 rounded">Housecall Pro: Single invoices only</span>
@@ -554,7 +554,7 @@ export default function BestGeneralContractorSoftware() {
               </p>
               <div className="flex flex-wrap gap-2 text-xs">
                 <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">Buildertrend: Full budget vs actual</span>
-                <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">CoConstruct: Integrated budget tracking</span>
+                <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">Contractor Foreman: Budget vs actual in base plan</span>
                 <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">Procore: Detailed cost tracking</span>
                 <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">FieldPulse: Job costing</span>
                 <span className="bg-red-100 text-red-800 px-2 py-0.5 rounded">Jobber: No job costing</span>
@@ -573,7 +573,7 @@ export default function BestGeneralContractorSoftware() {
               <div className="flex flex-wrap gap-2 text-xs">
                 <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">Buildertrend: Daily logs + organized photos</span>
                 <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">Procore: Comprehensive daily logs</span>
-                <span className="bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded">CoConstruct: Photo logs available</span>
+                <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">Contractor Foreman: Daily logs + photos + safety</span>
                 <span className="bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded">FieldPulse: Basic photo docs</span>
                 <span className="bg-red-100 text-red-800 px-2 py-0.5 rounded">Jobber: Job photos only</span>
               </div>
@@ -591,7 +591,7 @@ export default function BestGeneralContractorSoftware() {
               <div className="flex flex-wrap gap-2 text-xs">
                 <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">Procore: Best-in-class punch lists</span>
                 <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">Buildertrend: Punch list with client sign-off</span>
-                <span className="bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded">CoConstruct: Warranty/punch tracking</span>
+                <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded">Contractor Foreman: Punch lists included</span>
                 <span className="bg-red-100 text-red-800 px-2 py-0.5 rounded">Jobber: Not available</span>
                 <span className="bg-red-100 text-red-800 px-2 py-0.5 rounded">FieldPulse: Not available</span>
               </div>
@@ -643,12 +643,14 @@ export default function BestGeneralContractorSoftware() {
               </p>
             </div>
             <div className="bg-white border border-gray-200 rounded-lg p-4">
-              <p className="font-bold text-brand-blue mb-1">CoConstruct</p>
+              <p className="font-bold text-brand-blue mb-1">Contractor Foreman (unlimited users)</p>
               <p className="text-sm text-gray-700">
-                Starting at $99/mo+ = <strong>$1,188+/year</strong>. Pricing scales with features
-                and project volume. Best selections and specification management in the category.
-                Worth the investment for custom home builders who live and die by client decisions
-                on finishes and allowances.
+                $49-$148/mo = <strong>$588-$1,776/year</strong> for unlimited users. This is the
+                only platform here where adding a 10th or 20th user costs nothing extra. Includes
+                budgeting, change orders, daily logs, and punch lists in the base plan. Note:
+                CoConstruct (previously listed here) was acquired by Buildertrend in 2022 and its
+                selection workflows were rolled into Buildertrend &mdash; Contractor Foreman is the
+                current best budget alternative for small-to-mid GCs.
               </p>
             </div>
             <div className="bg-white border border-gray-200 rounded-lg p-4">
@@ -701,9 +703,9 @@ export default function BestGeneralContractorSoftware() {
             </li>
             <li>
               <strong>Contract terms:</strong> Procore requires annual commitments. Buildertrend
-              and CoConstruct offer monthly and annual options. Jobber, Housecall Pro, and FieldPulse
-              are month-to-month. If you are trying construction management software for the
-              first time, start with a platform that lets you leave if it does not work out.
+              offers monthly and annual options. Jobber, Housecall Pro, FieldPulse, and Contractor
+              Foreman are month-to-month. If you are trying construction management software for
+              the first time, start with a platform that lets you leave if it does not work out.
             </li>
           </ul>
         </>
@@ -737,14 +739,30 @@ export default function BestGeneralContractorSoftware() {
             </div>
             <div>
               <h3 className="font-semibold text-brand-blue mb-1">
-                Buildertrend vs. CoConstruct — which one for a remodeler?
+                What happened to CoConstruct?
               </h3>
               <p>
-                Both work well. Buildertrend is stronger on project management, sub scheduling,
-                and the overall client experience. CoConstruct is stronger on detailed specifications
-                and selection management for custom homes where every finish is a client decision.
-                If you do kitchen and bath remodels, Buildertrend. If you build custom homes
-                from the ground up, CoConstruct. If you do both, Buildertrend is more versatile.
+                Buildertrend acquired CoConstruct in 2021 and merged the products in 2022.
+                CoConstruct&rsquo;s selection and specification workflows &mdash; which were its main
+                differentiator &mdash; were rolled into Buildertrend. There is no standalone
+                CoConstruct product anymore. If you used to run on CoConstruct and are shopping
+                again, Buildertrend is the direct successor. If you want a budget alternative
+                with most of the same core features (just less polish on selections), look at
+                Contractor Foreman.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-brand-blue mb-1">
+                Buildertrend vs. Contractor Foreman — which one for a remodeler?
+              </h3>
+              <p>
+                Buildertrend is stronger on client experience, selections, and the polish of
+                the mobile app and client portal. Contractor Foreman is cheaper by a wide margin
+                (especially at 5+ users thanks to unlimited-user pricing) and covers the core
+                construction features &mdash; budgeting, change orders, daily logs, punch lists,
+                RFIs. If your projects involve a lot of client decisions on finishes and you
+                want a premium client experience, Buildertrend. If you are budget-conscious and
+                want construction features without per-user fees, Contractor Foreman.
               </p>
             </div>
             <div>
@@ -757,7 +775,7 @@ export default function BestGeneralContractorSoftware() {
                 submittals, and compliance documentation. A residential remodeler on Procore
                 is paying enterprise prices for features they do not use while missing residential
                 features (like client selections) that Procore does not offer. Use Buildertrend
-                or CoConstruct for residential.
+                or Contractor Foreman for residential.
               </p>
             </div>
             <div>
@@ -782,8 +800,8 @@ export default function BestGeneralContractorSoftware() {
                 Instead of collecting 50% upfront and 50% at completion, you bill at defined
                 stages — signing, rough-in, cabinets, substantial completion, final. This
                 protects your cash flow on projects over $20K and reduces the homeowner&rsquo;s
-                risk of paying too much upfront. Buildertrend, CoConstruct, and Procore all
-                support draw schedules. Jobber, Housecall Pro, and FieldPulse do not.
+                risk of paying too much upfront. Buildertrend, Contractor Foreman, and Procore
+                all support draw schedules. Jobber, Housecall Pro, and FieldPulse do not.
               </p>
             </div>
             <div>

@@ -24,8 +24,9 @@ const trialUrls: Record<string, string> = {
   GorillaDesk: "https://www.gorilladesk.com",
   JobNimbus: "https://www.jobnimbus.com",
   Buildertrend: "https://www.buildertrend.com",
-  CoConstruct: "https://www.coconstruct.com",
+  "Contractor Foreman": "https://www.contractorforeman.com",
   Procore: "https://www.procore.com",
+  ServiceM8: "https://www.servicem8.com",
 };
 
 interface ComparisonLayoutProps {
