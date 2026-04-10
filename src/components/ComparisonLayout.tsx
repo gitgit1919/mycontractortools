@@ -14,6 +14,20 @@ export interface SoftwareProduct {
   url?: string;
 }
 
+const trialUrls: Record<string, string> = {
+  ServiceTitan: "https://www.servicetitan.com",
+  "Housecall Pro": "https://www.housecallpro.com",
+  Jobber: "https://getjobber.com",
+  FieldPulse: "https://www.fieldpulse.com",
+  FieldEdge: "https://www.fieldedge.com",
+  Workiz: "https://www.workiz.com",
+  GorillaDesk: "https://www.gorilladesk.com",
+  JobNimbus: "https://www.jobnimbus.com",
+  Buildertrend: "https://www.buildertrend.com",
+  CoConstruct: "https://www.coconstruct.com",
+  Procore: "https://www.procore.com",
+};
+
 interface ComparisonLayoutProps {
   title: string;
   description: string;
@@ -101,6 +115,20 @@ function ProductCard({ product, rank }: { product: SoftwareProduct; rank: number
           ))}
         </div>
       </div>
+
+      {/* CTA */}
+      {trialUrls[product.name] && (
+        <div className="mt-4 pt-4 border-t">
+          <a
+            href={product.url || trialUrls[product.name]}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-5 py-2.5 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Visit {product.name} — Start Free Trial
+          </a>
+        </div>
+      )}
     </div>
   );
 }
@@ -193,6 +221,20 @@ export default function ComparisonLayout({
           </div>
         </section>
       )}
+
+      {/* Software quiz CTA */}
+      <section className="mb-8 bg-brand-blue text-white rounded-xl p-6 sm:p-8 text-center">
+        <h2 className="text-xl font-bold mb-2">Not Sure Which Software Is Right for You?</h2>
+        <p className="text-white/80 text-sm mb-4">
+          Answer 5 quick questions about your trade, team size, and priorities — get a personalized recommendation in under 60 seconds.
+        </p>
+        <Link
+          href="/calculators/software-quiz/"
+          className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium px-6 py-3 rounded-lg hover:bg-brand-orange/90 transition-colors"
+        >
+          Take the Free Software Quiz
+        </Link>
+      </section>
 
       {/* Email capture */}
       <div className="mb-8">

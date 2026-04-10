@@ -73,6 +73,7 @@ const relatedByTrade: Record<string, RelatedCalc[]> = {
     { name: "Markup vs Margin Calculator", href: "/calculators/markup-margin/" },
     { name: "Self-Employment Tax Calculator", href: "/calculators/self-employment-tax/" },
     { name: "Hourly Rate Calculator", href: "/calculators/hourly-rate/" },
+    { name: "Software Cost Calculator", href: "/calculators/software-cost/" },
   ],
   General: [
     { name: "Square Footage Calculator", href: "/calculators/square-footage/" },
@@ -95,6 +96,67 @@ const softwareByTrade: Record<string, { name: string; href: string }> = {
   Roofing: { name: "Best Roofing Software", href: "/best/roofing-software/" },
   Landscaping: { name: "Best Landscaping Software", href: "/best/landscaping-software/" },
   General: { name: "Best GC Software", href: "/best/general-contractor-software/" },
+  Painting: { name: "Best Painting Software", href: "/best/painting-software/" },
+  Flooring: { name: "Best Flooring Software", href: "/best/flooring-software/" },
+  Concrete: { name: "Best Concrete Software", href: "/best/concrete-contractor-software/" },
+  Carpentry: { name: "Best GC Software", href: "/best/general-contractor-software/" },
+  Masonry: { name: "Best Concrete Software", href: "/best/concrete-contractor-software/" },
+  Paving: { name: "Best GC Software", href: "/best/general-contractor-software/" },
+};
+
+const softwareBridgeByTrade: Record<string, { hook: string; quizNote: string }> = {
+  HVAC: {
+    hook: "Tired of calculating loads by hand? The right HVAC software automates sizing, generates instant quotes, and tracks maintenance agreements — so you close more jobs faster.",
+    quizNote: "Not sure which HVAC software fits your shop?",
+  },
+  Electrical: {
+    hook: "Still doing panel schedules on paper? Electrical contractor software handles load calculations, permit tracking, and invoicing — so you spend less time in the office and more time on the job.",
+    quizNote: "Not sure which software fits your electrical business?",
+  },
+  Plumbing: {
+    hook: "Managing service calls with spreadsheets? Plumbing software handles dispatching, flat-rate pricing, and invoicing from one app — so your techs can focus on the work.",
+    quizNote: "Not sure which software fits your plumbing business?",
+  },
+  Roofing: {
+    hook: "Still measuring roofs by hand and writing estimates in the truck? Roofing software handles aerial measurements, material ordering, and customer follow-ups automatically.",
+    quizNote: "Not sure which software fits your roofing company?",
+  },
+  Landscaping: {
+    hook: "Spending hours planning routes and chasing invoices? Landscaping software optimizes your routes, automates recurring billing, and lets your crew clock in from their phones.",
+    quizNote: "Not sure which software fits your landscaping business?",
+  },
+  Concrete: {
+    hook: "Great at pouring concrete but buried in paperwork? The right software handles estimating, scheduling, and invoicing — so you can focus on the pour, not the paperwork.",
+    quizNote: "Not sure which software fits your concrete business?",
+  },
+  Carpentry: {
+    hook: "Juggling estimates, schedules, and invoices across multiple projects? Contractor software keeps everything in one place — quotes, change orders, sub schedules, and payments.",
+    quizNote: "Not sure which software fits your business?",
+  },
+  General: {
+    hook: "Running your business on sticky notes and spreadsheets? Contractor software handles scheduling, estimating, and invoicing from your phone — so nothing falls through the cracks.",
+    quizNote: "Not sure which software fits your business?",
+  },
+  Business: {
+    hook: "Want software that handles estimates, invoicing, and scheduling so you can focus on growing your business? Find the right tool for your trade and team size.",
+    quizNote: "Not sure which software fits your business?",
+  },
+  Painting: {
+    hook: "Tired of writing estimates on the tailgate? Painting software calculates coverage, generates professional quotes, and follows up with customers automatically.",
+    quizNote: "Not sure which software fits your painting business?",
+  },
+  Flooring: {
+    hook: "Still calculating material by hand and tracking jobs on paper? Flooring software handles room-by-room scheduling, material ordering, and customer communication in one app.",
+    quizNote: "Not sure which software fits your flooring business?",
+  },
+  Masonry: {
+    hook: "Great at laying block but buried in paperwork? Contractor software handles estimating, scheduling, and invoicing — so you can focus on the work, not the office.",
+    quizNote: "Not sure which software fits your business?",
+  },
+  Paving: {
+    hook: "Managing paving jobs with spreadsheets and phone calls? Contractor software streamlines scheduling, estimating, and crew management from one app.",
+    quizNote: "Not sure which software fits your business?",
+  },
 };
 
 interface CalculatorLayoutProps {
@@ -189,6 +251,31 @@ export default function CalculatorLayout({
               {softwareByTrade[trade].name} →
             </Link>
           )}
+        </section>
+      )}
+
+      {/* Software bridge — contextual CTA connecting calculators to software */}
+      {softwareBridgeByTrade[trade] && (
+        <section className="mb-8 bg-blue-50 border border-blue-200 rounded-xl p-6">
+          <p className="text-gray-700 text-sm leading-relaxed mb-3">
+            {softwareBridgeByTrade[trade].hook}
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {softwareByTrade[trade] && (
+              <Link
+                href={softwareByTrade[trade].href}
+                className="inline-flex items-center gap-1 text-sm font-medium bg-brand-blue text-white px-4 py-2 rounded-lg hover:bg-brand-blue/90 transition-colors"
+              >
+                Compare {trade === "Business" ? "" : trade + " "}Software Options
+              </Link>
+            )}
+            <Link
+              href="/calculators/software-quiz/"
+              className="inline-flex items-center gap-1 text-sm font-medium border border-brand-blue text-brand-blue px-4 py-2 rounded-lg hover:bg-brand-blue hover:text-white transition-colors"
+            >
+              {softwareBridgeByTrade[trade].quizNote} Take the quiz
+            </Link>
+          </div>
         </section>
       )}
 

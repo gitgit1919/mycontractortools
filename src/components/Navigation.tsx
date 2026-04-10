@@ -15,6 +15,8 @@ const calculators = [
   { name: "Profit Margin Calculator", href: "/calculators/contractor-profit-margin/" },
   { name: "Self-Employment Tax Calculator", href: "/calculators/self-employment-tax/" },
   { name: "Hourly Rate Calculator", href: "/calculators/hourly-rate/" },
+  { name: "Software Quiz — Which Should I Use?", href: "/calculators/software-quiz/" },
+  { name: "Software Cost Calculator (TCO)", href: "/calculators/software-cost/" },
 ];
 
 const softwareReviews = [

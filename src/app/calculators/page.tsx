@@ -102,6 +102,22 @@ const allCalculators: Calculator[] = [
     tags: ["hourly rate", "charge", "pricing", "overhead", "billable", "income", "daily rate"],
   },
   {
+    name: "Software Quiz — Which Software Should I Use?",
+    href: "/calculators/software-quiz/",
+    description: "Answer 5 questions about your trade, team, and priorities — get a personalized software recommendation in 60 seconds.",
+    icon: "🧭",
+    category: "Business",
+    tags: ["software", "quiz", "recommendation", "FSM", "field service", "which software", "compare"],
+  },
+  {
+    name: "Software Cost Calculator (TCO)",
+    href: "/calculators/software-cost/",
+    description: "Calculate the real total cost of contractor software — including hidden onboarding fees, per-user costs, and payment processing.",
+    icon: "📊",
+    category: "Business",
+    tags: ["software", "cost", "TCO", "total cost", "pricing", "compare", "onboarding", "hidden fees"],
+  },
+  {
     name: "Stair Calculator",
     href: "/calculators/stair/",
     description: "Calculate risers, treads, stringer length, and stair angle with IRC code compliance checking.",
