@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import EmailCapture from "@/components/EmailCapture";
+import { getTrialUrl } from "@/lib/trialUrls";
 
 export const metadata: Metadata = {
   title: "Best Jobber Alternatives (2026) — 6 Competitors Compared",
@@ -209,14 +210,26 @@ export default function JobberAlternatives() {
               </div>
             </div>
           </div>
-          {alt.link && (
-            <Link
-              href={alt.link}
-              className="inline-block text-sm font-medium text-brand-orange hover:underline"
-            >
-              Read full {alt.name} vs Jobber comparison &rarr;
-            </Link>
-          )}
+          <div className="flex flex-wrap items-center gap-4">
+            {getTrialUrl(alt.name) && (
+              <a
+                href={getTrialUrl(alt.name)!}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-5 py-2.5 rounded-lg hover:bg-brand-orange/90 transition-colors"
+              >
+                Visit {alt.name} &mdash; Start Free Trial
+              </a>
+            )}
+            {alt.link && (
+              <Link
+                href={alt.link}
+                className="inline-block text-sm font-medium text-brand-orange hover:underline"
+              >
+                Read full {alt.name} vs Jobber comparison &rarr;
+              </Link>
+            )}
+          </div>
         </section>
       ))}
 

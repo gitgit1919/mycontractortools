@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import EmailCapture from "@/components/EmailCapture";
+import { getTrialUrl } from "@/lib/trialUrls";
 
 export const metadata: Metadata = {
   title: "Best Buildertrend Alternatives (2026) — 5 Options for Builders & GCs",
@@ -195,6 +196,18 @@ export default function BuildertrendAlternatives() {
                 <p className="text-gray-700 text-sm leading-relaxed">{alt.keyWeakness}</p>
               </div>
             </div>
+            {getTrialUrl(alt.name) && (
+              <div className="mt-4 pt-4 border-t">
+                <a
+                  href={getTrialUrl(alt.name)!}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-5 py-2.5 rounded-lg hover:bg-brand-orange/90 transition-colors"
+                >
+                  Visit {alt.name} &mdash; Start Free Trial
+                </a>
+              </div>
+            )}
           </div>
         </section>
       ))}

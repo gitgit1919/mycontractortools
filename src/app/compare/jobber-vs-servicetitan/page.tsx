@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import EmailCapture from "@/components/EmailCapture";
+import { getTrialUrl } from "@/lib/trialUrls";
 
 export const metadata: Metadata = {
   title: "Jobber vs ServiceTitan (2026) — Honest Comparison",
@@ -52,26 +53,76 @@ export default function JobberVsServiceTitan() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="bg-white rounded-lg p-4 border border-gray-200">
             <h3 className="font-bold text-brand-blue mb-2">Choose Jobber if:</h3>
-            <ul className="text-sm text-gray-700 space-y-1">
-              <li>• You have 1-15 employees</li>
-              <li>• You want something running by tomorrow</li>
-              <li>• Quoting and follow-ups are critical to your sales</li>
-              <li>• You want a customer self-service portal</li>
-              <li>• Budget is a primary concern</li>
+            <ul className="text-sm text-gray-700 space-y-1 mb-4">
+              <li>&bull; You have 1-15 employees</li>
+              <li>&bull; You want something running by tomorrow</li>
+              <li>&bull; Quoting and follow-ups are critical to your sales</li>
+              <li>&bull; You want a customer self-service portal</li>
+              <li>&bull; Budget is a primary concern</li>
             </ul>
+            <a
+              href={getTrialUrl("Jobber")!}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+            >
+              Start Jobber free trial &rarr;
+            </a>
           </div>
           <div className="bg-white rounded-lg p-4 border border-gray-200">
             <h3 className="font-bold text-brand-orange mb-2">Choose ServiceTitan if:</h3>
-            <ul className="text-sm text-gray-700 space-y-1">
-              <li>• You have 10+ technicians</li>
-              <li>• You need a built-in flat-rate pricebook</li>
-              <li>• Marketing spend tracking and ROI matter</li>
-              <li>• You want membership program management</li>
-              <li>• You can invest 6-12 weeks in onboarding</li>
+            <ul className="text-sm text-gray-700 space-y-1 mb-4">
+              <li>&bull; You have 10+ technicians</li>
+              <li>&bull; You need a built-in flat-rate pricebook</li>
+              <li>&bull; Marketing spend tracking and ROI matter</li>
+              <li>&bull; You want membership program management</li>
+              <li>&bull; You can invest 6-12 weeks in onboarding</li>
             </ul>
+            <a
+              href={getTrialUrl("ServiceTitan")!}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+            >
+              Book a ServiceTitan demo &rarr;
+            </a>
           </div>
         </div>
       </div>
+
+      {/* Business stage matrix */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-bold text-brand-blue mb-4">Which Stage Are You In?</h2>
+        <p className="text-gray-700 mb-4">
+          The right answer changes as your shop grows. Here is the honest match by revenue and crew size:
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+            <p className="text-xs font-semibold text-blue-700 uppercase tracking-wide">Solo / Startup</p>
+            <p className="text-lg font-bold text-brand-blue mt-1">Under $250K</p>
+            <p className="text-xs text-gray-600 mb-2">1 truck, owner-operator</p>
+            <p className="text-sm text-gray-700"><strong>Jobber Core ($29/mo).</strong> ServiceTitan would be a $20K+/year mistake at this stage.</p>
+          </div>
+          <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+            <p className="text-xs font-semibold text-green-700 uppercase tracking-wide">Small Crew</p>
+            <p className="text-lg font-bold text-brand-blue mt-1">$250K - $750K</p>
+            <p className="text-xs text-gray-600 mb-2">2-5 techs</p>
+            <p className="text-sm text-gray-700"><strong>Jobber Connect or Grow.</strong> Still too small for ServiceTitan&apos;s minimum spend to make sense.</p>
+          </div>
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+            <p className="text-xs font-semibold text-amber-700 uppercase tracking-wide">Growing</p>
+            <p className="text-lg font-bold text-brand-blue mt-1">$750K - $1.5M</p>
+            <p className="text-xs text-gray-600 mb-2">5-10 techs</p>
+            <p className="text-sm text-gray-700"><strong>The decision zone.</strong> Jobber Grow still works, but if you sell flat-rate and run marketing, demo ServiceTitan.</p>
+          </div>
+          <div className="bg-purple-50 border border-purple-200 rounded-xl p-4">
+            <p className="text-xs font-semibold text-purple-700 uppercase tracking-wide">Established</p>
+            <p className="text-lg font-bold text-brand-blue mt-1">$1.5M+</p>
+            <p className="text-xs text-gray-600 mb-2">10-50+ techs</p>
+            <p className="text-sm text-gray-700"><strong>ServiceTitan starts to pay for itself</strong> through pricebook sales lift, call tracking, and dispatch optimization.</p>
+          </div>
+        </div>
+      </section>
 
       {/* Feature comparison table */}
       <section className="mb-10">
@@ -127,6 +178,72 @@ export default function JobberVsServiceTitan() {
         </div>
       </section>
 
+      {/* Real Year 1 cost analysis */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-bold text-brand-blue mb-4">Real Year-1 Cost by Team Size</h2>
+        <p className="text-gray-700 mb-4">
+          Headline pricing is misleading. Here is what each option actually costs in your first year &mdash; including
+          implementation, payment processing on $300K of card volume, and required training:
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden">
+            <thead className="bg-brand-blue text-white">
+              <tr>
+                <th className="text-left p-3 font-semibold">Team Size</th>
+                <th className="text-left p-3 font-semibold">Jobber (Year 1)</th>
+                <th className="text-left p-3 font-semibold">ServiceTitan (Year 1)</th>
+                <th className="text-left p-3 font-semibold">Difference</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-white">
+                <td className="p-3 font-medium text-gray-800">Solo (1 person)</td>
+                <td className="p-3 text-gray-700">~$348 (Core)</td>
+                <td className="p-3 text-gray-700">~$8,000+ (1 tech min + setup)</td>
+                <td className="p-3 font-semibold text-brand-orange">23x more</td>
+              </tr>
+              <tr className="bg-gray-50">
+                <td className="p-3 font-medium text-gray-800">3 techs</td>
+                <td className="p-3 text-gray-700">~$1,800 (Connect, 3 users)</td>
+                <td className="p-3 text-gray-700">~$13,500 + ~$5K setup = ~$18,500</td>
+                <td className="p-3 font-semibold text-brand-orange">10x more</td>
+              </tr>
+              <tr className="bg-white">
+                <td className="p-3 font-medium text-gray-800">5 techs</td>
+                <td className="p-3 text-gray-700">~$3,600 (Grow, 5 users)</td>
+                <td className="p-3 text-gray-700">~$22,500 + ~$8K setup = ~$30,500</td>
+                <td className="p-3 font-semibold text-brand-orange">8x more</td>
+              </tr>
+              <tr className="bg-gray-50">
+                <td className="p-3 font-medium text-gray-800">10 techs</td>
+                <td className="p-3 text-gray-700">~$7,200 (Grow, 10 users)</td>
+                <td className="p-3 text-gray-700">~$45,000 + ~$15K setup = ~$60,000</td>
+                <td className="p-3 font-semibold text-brand-orange">8x more</td>
+              </tr>
+              <tr className="bg-white">
+                <td className="p-3 font-medium text-gray-800">20 techs</td>
+                <td className="p-3 text-gray-700">~$14,400 (custom)</td>
+                <td className="p-3 text-gray-700">~$90,000 + ~$25K setup = ~$115,000</td>
+                <td className="p-3 font-semibold text-brand-orange">8x more</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-gray-500 mt-2">
+          Numbers are 2026 estimates. ServiceTitan does not publish pricing &mdash; figures from contractor reports
+          and reseller materials. Actual quotes vary by trade, region, and contract length.
+        </p>
+        <div className="bg-brand-gray rounded-lg p-4 mt-4 text-sm">
+          <p className="font-semibold text-brand-blue mb-1">When the 8-23x premium is worth it:</p>
+          <p className="text-gray-700">
+            ServiceTitan can pay for itself when (a) flat-rate pricebook selling lifts your average ticket by
+            $50-$200, (b) call tracking shows you which marketing channels actually work, and (c) you have
+            enough call volume that dispatch optimization saves real drive time. None of these matter much under
+            $1M revenue. All three matter a lot above $1.5M.
+          </p>
+        </div>
+      </section>
+
       {/* Detailed analysis */}
       <section className="mb-10 prose prose-gray max-w-none">
         <h2 className="text-2xl font-bold text-brand-blue mb-4">Detailed Analysis</h2>
@@ -172,12 +289,31 @@ export default function JobberVsServiceTitan() {
       {/* Bottom line */}
       <section className="mb-10 bg-brand-blue text-white rounded-xl p-6">
         <h2 className="text-xl font-bold mb-3">The Bottom Line</h2>
-        <p className="text-white/90 leading-relaxed">
+        <p className="text-white/90 leading-relaxed mb-4">
           Choose Jobber if you are a small to mid-size contractor who wants a clean, affordable tool
           that handles the fundamentals well. Choose ServiceTitan if you run a large operation where
           pricebook-driven selling, marketing analytics, and enterprise reporting will generate enough
-          additional revenue to justify the 5-10x higher cost. When in doubt, start with Jobber.
+          additional revenue to justify the 5-10x higher cost. When in doubt, start with Jobber &mdash; it is
+          easy to switch later, and most successful contractors do.
         </p>
+        <div className="flex flex-wrap gap-3">
+          <a
+            href={getTrialUrl("Jobber")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium px-5 py-2.5 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Start Jobber free trial
+          </a>
+          <a
+            href={getTrialUrl("ServiceTitan")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-white text-brand-blue font-medium px-5 py-2.5 rounded-lg hover:bg-white/90 transition-colors"
+          >
+            Book ServiceTitan demo
+          </a>
+        </div>
       </section>
 
       {/* Email capture */}

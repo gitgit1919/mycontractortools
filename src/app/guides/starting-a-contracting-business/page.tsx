@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
+import { getTrialUrl } from "@/lib/trialUrls";
 
 export const metadata: Metadata = {
   title:
@@ -190,6 +191,95 @@ export default function StartingContractingBusiness() {
         ]}
       />
 
+      <h3 className="text-xl font-bold text-brand-blue mt-8 mb-3">
+        Which LLC Formation Service Should You Use?
+      </h3>
+      <p className="text-gray-700 leading-relaxed mb-4">
+        You can absolutely file the LLC paperwork yourself on your state&apos;s Secretary of
+        State website &mdash; it is just a form. Formation services exist to save you the
+        afternoon and to handle registered agent service in years 2+. Here is the honest
+        rundown for contractors:
+      </p>
+
+      <div className="space-y-4 my-6">
+        <div className="bg-white border border-green-300 rounded-xl p-5">
+          <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
+            <div className="flex items-center gap-2">
+              <h4 className="font-bold text-brand-blue">Northwest Registered Agent</h4>
+              <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Best for most contractors</span>
+            </div>
+            <span className="text-sm text-gray-500">$39 + state fee</span>
+          </div>
+          <p className="text-sm text-gray-700 mb-2">
+            US-based privacy-first formation service. They use their address as your
+            registered agent so your home address never appears on the public record &mdash;
+            valuable when angry customers start Googling you. No upsells, no &quot;premium&quot;
+            tiers that exist to confuse you.
+          </p>
+          <p className="text-xs text-gray-600 mb-3"><strong>Why we recommend it:</strong> The cleanest pricing on this list, the best privacy practices, and US-based phone support that picks up. Year 2+ is $125 for registered agent service.</p>
+          <a
+            href={getTrialUrl("Northwest Registered Agent")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Visit Northwest Registered Agent &rarr;
+          </a>
+        </div>
+
+        <div className="bg-white border border-gray-200 rounded-xl p-5">
+          <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
+            <h4 className="font-bold text-brand-blue">ZenBusiness</h4>
+            <span className="text-sm text-gray-500">$0 + state fee (Starter plan)</span>
+          </div>
+          <p className="text-sm text-gray-700 mb-2">
+            Free filing on the entry plan, slick onboarding, and add-on services like
+            worry-free compliance reminders and a business banking partnership. The
+            tradeoff: heavier upsells through the checkout flow, and the $0 plan has a
+            longer turnaround.
+          </p>
+          <p className="text-xs text-gray-600 mb-3"><strong>Pick this if:</strong> You want a free filing and don&apos;t mind clicking past upsells.</p>
+          <a
+            href={getTrialUrl("ZenBusiness")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Visit ZenBusiness &rarr;
+          </a>
+        </div>
+
+        <div className="bg-white border border-gray-200 rounded-xl p-5">
+          <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
+            <h4 className="font-bold text-brand-blue">LegalZoom</h4>
+            <span className="text-sm text-gray-500">$0–$299 + state fee</span>
+          </div>
+          <p className="text-sm text-gray-700 mb-2">
+            The most recognized name. Pays off if you also need attorney consultations
+            or trademark filing through the same vendor. Otherwise their LLC pricing is
+            higher than competitors for an essentially identical product.
+          </p>
+          <p className="text-xs text-gray-600 mb-3"><strong>Pick this if:</strong> You already plan to use LegalZoom for trademarks or legal advice and want everything on one platform.</p>
+          <a
+            href={getTrialUrl("LegalZoom")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Visit LegalZoom &rarr;
+          </a>
+        </div>
+      </div>
+
+      <TipBox title="DIY filing is also fine">
+        <p>
+          If you have an afternoon and a clear head, you can file directly with your
+          state for just the state fee &mdash; no service required. The forms are short.
+          The benefit of a service is mainly the registered agent privacy, which keeps
+          your home address off the public record.
+        </p>
+      </TipBox>
+
       <TipBox title="S-Corp Election — Save on Taxes Later">
         <p>
           Once you are making $60K+ in profit, talk to an accountant about
@@ -304,6 +394,101 @@ export default function StartingContractingBusiness() {
         certificates of insurance, which you will need when bidding commercial
         jobs.
       </p>
+
+      <h3 className="text-xl font-bold text-brand-blue mt-8 mb-3">
+        Where to Get Contractor Insurance Quotes
+      </h3>
+      <p className="text-gray-700 leading-relaxed mb-4">
+        These four providers all sell direct to contractors with same-day
+        certificates of insurance. Get a quote from at least two before binding a
+        policy &mdash; rates for the same coverage can vary 30%+ between carriers.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+        <div className="bg-white border border-gray-200 rounded-xl p-5">
+          <h4 className="font-bold text-brand-blue mb-1">NEXT Insurance</h4>
+          <p className="text-sm text-gray-700 mb-2">
+            Online-first, instant quotes, same-day certificates from your phone.
+            Built specifically around small contractor and trade businesses.
+            Bundle GL + tools + commercial auto in one policy.
+          </p>
+          <p className="text-xs text-gray-600 mb-3"><strong>Best for:</strong> Solo contractors and small crews who want a fully-online experience.</p>
+          <a
+            href={getTrialUrl("NEXT Insurance")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Get NEXT quote &rarr;
+          </a>
+        </div>
+
+        <div className="bg-white border border-gray-200 rounded-xl p-5">
+          <h4 className="font-bold text-brand-blue mb-1">Hiscox</h4>
+          <p className="text-sm text-gray-700 mb-2">
+            Established carrier with deep small-business expertise. Strong on
+            general liability and professional liability. Slightly more
+            traditional underwriting than NEXT &mdash; sometimes better pricing for
+            higher-revenue shops.
+          </p>
+          <p className="text-xs text-gray-600 mb-3"><strong>Best for:</strong> Contractors who want a brand-name carrier with good claims service.</p>
+          <a
+            href={getTrialUrl("Hiscox")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Get Hiscox quote &rarr;
+          </a>
+        </div>
+
+        <div className="bg-white border border-gray-200 rounded-xl p-5">
+          <h4 className="font-bold text-brand-blue mb-1">Simply Business</h4>
+          <p className="text-sm text-gray-700 mb-2">
+            Marketplace that pulls quotes from multiple carriers in one
+            application. Saves you from filling out the same form three times.
+            Good when you do not know which carrier will price your trade best.
+          </p>
+          <p className="text-xs text-gray-600 mb-3"><strong>Best for:</strong> Contractors who want to compare multiple carriers from one form.</p>
+          <a
+            href={getTrialUrl("Simply Business")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Compare quotes &rarr;
+          </a>
+        </div>
+
+        <div className="bg-white border border-gray-200 rounded-xl p-5">
+          <h4 className="font-bold text-brand-blue mb-1">Thimble</h4>
+          <p className="text-sm text-gray-700 mb-2">
+            Unique on-demand pricing &mdash; you can buy a single-day, single-week,
+            or single-month policy for one specific job, in addition to standard
+            annual GL. Useful when a one-off commercial job demands proof of
+            insurance you do not normally carry.
+          </p>
+          <p className="text-xs text-gray-600 mb-3"><strong>Best for:</strong> Side-job contractors or specialty work requiring short-term certs.</p>
+          <a
+            href={getTrialUrl("Thimble")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Get Thimble quote &rarr;
+          </a>
+        </div>
+      </div>
+
+      <TipBox title="Always get GL bound before your first paid job">
+        <p>
+          A single accident on a job site &mdash; a dropped tool through a window, water
+          damage, a slip-and-fall &mdash; can cost more than you will earn in a year. Bind
+          a general liability policy <strong>before</strong> you take your first paid
+          job, not after. Most contractors can be insured by tomorrow morning if they
+          start the application tonight.
+        </p>
+      </TipBox>
 
       {/* Section 5 */}
       <SectionHeading id="finances">
@@ -458,35 +643,112 @@ export default function StartingContractingBusiness() {
         close jobs. You can build one in an afternoon with a website builder.
       </p>
 
+      <h3 className="text-xl font-bold text-brand-blue mt-8 mb-3">
+        Which Website Builder Should You Use?
+      </h3>
       <p className="text-gray-700 leading-relaxed mb-4">
-        <strong>Website builder options for contractors:</strong>
+        Two paths: an all-in-one builder (fastest) or WordPress on shared
+        hosting (more flexible, better long-term SEO). Both work for
+        contractors. Pick by how much control you want and whether you plan to
+        invest in SEO down the road.
       </p>
-      <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-4">
-        <li>
-          <strong>Squarespace</strong> — Clean templates, easy to use, looks
-          professional. $16–$33/month. Good for contractors who want a polished
-          site without touching code.
-        </li>
-        <li>
-          <strong>Wix</strong> — Drag-and-drop builder with free tier. $17–$36/month for premium. Most
-          beginner-friendly option.
-        </li>
-        <li>
-          <strong>WordPress + hosting</strong> — Most flexible but requires more
-          setup. Hosting runs $3–$15/month. Best if you want full control or
-          plan to do SEO seriously.
-        </li>
-        <li>
-          <strong>GoDaddy Website Builder</strong> — Simple and cheap ($10–$22/month). Good
-          enough for a basic contractor site.
-        </li>
-      </ul>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+        <div className="bg-white border-2 border-green-500 rounded-xl p-5 relative">
+          <span className="absolute -top-3 left-4 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">
+            Fastest to launch
+          </span>
+          <h4 className="font-bold text-brand-blue mb-1 mt-2">Squarespace</h4>
+          <p className="text-sm text-gray-700 mb-2">
+            Polished templates, hosting included, mobile-responsive out of the
+            box. $16&ndash;$33/month. The pick if you want a professional site
+            live in an afternoon and never touch code.
+          </p>
+          <p className="text-xs text-gray-600 mb-3">
+            <strong>Best for:</strong> Solo contractors who want done-in-a-day
+          </p>
+          <a
+            href={getTrialUrl("Squarespace")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Visit Squarespace &rarr;
+          </a>
+        </div>
+
+        <div className="bg-white border border-gray-200 rounded-xl p-5">
+          <h4 className="font-bold text-brand-blue mb-1">Wix</h4>
+          <p className="text-sm text-gray-700 mb-2">
+            Drag-and-drop builder with a free tier. $17&ndash;$36/month for
+            premium plans that remove ads and add a custom domain. Easiest UI
+            for non-technical users.
+          </p>
+          <p className="text-xs text-gray-600 mb-3">
+            <strong>Best for:</strong> Contractors who want maximum design
+            control without coding
+          </p>
+          <a
+            href={getTrialUrl("Wix")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Visit Wix &rarr;
+          </a>
+        </div>
+
+        <div className="bg-white border border-gray-200 rounded-xl p-5">
+          <h4 className="font-bold text-brand-blue mb-1">Bluehost</h4>
+          <p className="text-sm text-gray-700 mb-2">
+            WordPress hosting recommended by WordPress.org itself. Around
+            $3&ndash;$10/month with a free domain for the first year. Best if
+            you plan to take SEO seriously and want to own your platform.
+          </p>
+          <p className="text-xs text-gray-600 mb-3">
+            <strong>Best for:</strong> Contractors planning to invest in
+            content marketing and SEO
+          </p>
+          <a
+            href={getTrialUrl("Bluehost")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Visit Bluehost &rarr;
+          </a>
+        </div>
+
+        <div className="bg-white border border-gray-200 rounded-xl p-5">
+          <h4 className="font-bold text-brand-blue mb-1">SiteGround</h4>
+          <p className="text-sm text-gray-700 mb-2">
+            Premium WordPress hosting with faster speeds and better support
+            than budget hosts. $3&ndash;$8/month introductory, renews higher.
+            Worth it if your site is mission-critical.
+          </p>
+          <p className="text-xs text-gray-600 mb-3">
+            <strong>Best for:</strong> Contractors who already have a working
+            WordPress site and want it faster
+          </p>
+          <a
+            href={getTrialUrl("SiteGround")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Visit SiteGround &rarr;
+          </a>
+        </div>
+      </div>
 
       <TipBox title="Don't Overthink Your Website">
         <p>
           Perfection is the enemy of done. A basic 3-page site that is live
           today beats a perfect 20-page site that you never finish. Get your
-          name, services, and phone number online. You can improve it later.
+          name, services, and phone number online &mdash; you can improve it
+          later. If you&apos;re torn between Squarespace and WordPress, start
+          with Squarespace. You can always migrate later if SEO becomes a real
+          priority.
         </p>
       </TipBox>
 
@@ -678,12 +940,123 @@ export default function StartingContractingBusiness() {
         <strong>When you hire employees, you will need:</strong>
       </p>
       <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-4">
-        <li>Payroll service (Gusto, QuickBooks Payroll, ADP Run)</li>
+        <li>Payroll service (compared below)</li>
         <li>Workers compensation insurance (required in most states)</li>
         <li>Unemployment insurance registration with your state</li>
         <li>I-9 and W-4 forms for each employee</li>
         <li>Employer Identification Number (you already have this from LLC setup)</li>
       </ul>
+
+      <h3 className="text-xl font-bold text-brand-blue mt-8 mb-3">
+        Payroll &amp; Accounting Tools for Your First Hire
+      </h3>
+      <p className="text-gray-700 leading-relaxed mb-4">
+        The day you hire your first W-2 employee, you need payroll software.
+        Doing payroll by hand is the fastest way to file your taxes wrong and
+        owe penalties. Pair payroll with accounting from day one so the books
+        stay clean.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+        <div className="bg-white border-2 border-green-500 rounded-xl p-5 relative">
+          <span className="absolute -top-3 left-4 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">
+            Best payroll for small contractors
+          </span>
+          <h4 className="font-bold text-brand-blue mb-1 mt-2">Gusto</h4>
+          <p className="text-sm text-gray-700 mb-2">
+            Full-service payroll with auto tax filing, workers comp
+            integration, contractor 1099 payments, and benefits. Starts around
+            $40/month + $6/employee. The simplest way to run payroll without a
+            bookkeeper.
+          </p>
+          <p className="text-xs text-gray-600 mb-3">
+            <strong>Best for:</strong> Contractors hiring their first
+            1&ndash;10 employees
+          </p>
+          <a
+            href={getTrialUrl("Gusto")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Visit Gusto &rarr;
+          </a>
+        </div>
+
+        <div className="bg-white border border-gray-200 rounded-xl p-5">
+          <h4 className="font-bold text-brand-blue mb-1">QuickBooks Online</h4>
+          <p className="text-sm text-gray-700 mb-2">
+            Industry-standard accounting software. Most CPAs and bookkeepers
+            already work in it, which saves you hours at tax time. Add
+            QuickBooks Payroll if you want one vendor for both. $30&ndash;$200/month.
+          </p>
+          <p className="text-xs text-gray-600 mb-3">
+            <strong>Best for:</strong> Contractors who want one tool for
+            books + payroll their CPA already knows
+          </p>
+          <a
+            href={getTrialUrl("QuickBooks")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Visit QuickBooks &rarr;
+          </a>
+        </div>
+
+        <div className="bg-white border border-gray-200 rounded-xl p-5">
+          <h4 className="font-bold text-brand-blue mb-1">FreshBooks</h4>
+          <p className="text-sm text-gray-700 mb-2">
+            Easier-to-use accounting alternative to QuickBooks. Strong
+            invoicing, time tracking, and expense capture. Better for solo
+            operators and small crews than QuickBooks. $19&ndash;$60/month.
+          </p>
+          <p className="text-xs text-gray-600 mb-3">
+            <strong>Best for:</strong> Solo contractors who hate QuickBooks&apos;
+            complexity
+          </p>
+          <a
+            href={getTrialUrl("FreshBooks")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Visit FreshBooks &rarr;
+          </a>
+        </div>
+
+        <div className="bg-white border border-gray-200 rounded-xl p-5">
+          <h4 className="font-bold text-brand-blue mb-1">Wave</h4>
+          <p className="text-sm text-gray-700 mb-2">
+            Free accounting and invoicing. Pay only for payment processing
+            and payroll add-ons. Genuinely free for the bookkeeping side.
+            Limited features, but hard to beat the price for a solo
+            contractor.
+          </p>
+          <p className="text-xs text-gray-600 mb-3">
+            <strong>Best for:</strong> Cash-tight solos who just need
+            invoicing and basic books
+          </p>
+          <a
+            href={getTrialUrl("Wave")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Visit Wave &rarr;
+          </a>
+        </div>
+      </div>
+
+      <TipBox title="One Vendor or Two?">
+        <p>
+          Two solid combos work for most contractors: <strong>QuickBooks +
+          QuickBooks Payroll</strong> (one login, one vendor) or
+          <strong> Gusto + Xero/FreshBooks</strong> (best-in-class payroll
+          paired with friendlier accounting). Don&apos;t over-engineer it
+          &mdash; pick a combo and stop shopping.
+        </p>
+      </TipBox>
 
       <TipBox title="Start with Subs, Then Hire">
         <p>

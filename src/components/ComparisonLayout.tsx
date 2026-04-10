@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import EmailCapture from "./EmailCapture";
+import { trialUrls } from "@/lib/trialUrls";
 
 export interface SoftwareProduct {
   name: string;
@@ -13,21 +14,6 @@ export interface SoftwareProduct {
   features: string[];
   url?: string;
 }
-
-const trialUrls: Record<string, string> = {
-  ServiceTitan: "https://www.servicetitan.com",
-  "Housecall Pro": "https://www.housecallpro.com",
-  Jobber: "https://getjobber.com",
-  FieldPulse: "https://www.fieldpulse.com",
-  FieldEdge: "https://www.fieldedge.com",
-  Workiz: "https://www.workiz.com",
-  GorillaDesk: "https://www.gorilladesk.com",
-  JobNimbus: "https://www.jobnimbus.com",
-  Buildertrend: "https://www.buildertrend.com",
-  "Contractor Foreman": "https://www.contractorforeman.com",
-  Procore: "https://www.procore.com",
-  ServiceM8: "https://www.servicem8.com",
-};
 
 interface ComparisonLayoutProps {
   title: string;

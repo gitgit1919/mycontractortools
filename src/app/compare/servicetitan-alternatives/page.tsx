@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import EmailCapture from "@/components/EmailCapture";
+import TrialCtaGrid from "@/components/TrialCtaGrid";
 
 export const metadata: Metadata = {
   title: "Best ServiceTitan Alternatives (2026) — 6 Options That Cost Less",
@@ -448,6 +449,13 @@ export default function ServiceTitanAlternatives() {
           </Link>
         </div>
       </section>
+
+      {/* Trial CTA grid */}
+      <TrialCtaGrid
+        names={["Jobber", "Housecall Pro", "FieldEdge", "Workiz", "FieldPulse", "Service Fusion", "ServiceTitan"]}
+        heading="Try any of these free"
+        description="Each tool below offers a free trial or live demo. We earn an affiliate commission if you sign up — see disclosure below."
+      />
 
       {/* Email capture */}
       <div className="mb-8">

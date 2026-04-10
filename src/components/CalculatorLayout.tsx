@@ -71,8 +71,11 @@ const relatedByTrade: Record<string, RelatedCalc[]> = {
   Business: [
     { name: "Profit Margin Calculator", href: "/calculators/contractor-profit-margin/" },
     { name: "Markup vs Margin Calculator", href: "/calculators/markup-margin/" },
-    { name: "Self-Employment Tax Calculator", href: "/calculators/self-employment-tax/" },
     { name: "Hourly Rate Calculator", href: "/calculators/hourly-rate/" },
+    { name: "Crew Day Cost Calculator", href: "/calculators/crew-day-cost/" },
+    { name: "Max Lead Cost Calculator", href: "/calculators/lead-cost/" },
+    { name: "W-2 vs 1099 Employee Cost", href: "/calculators/employee-true-cost/" },
+    { name: "Self-Employment Tax Calculator", href: "/calculators/self-employment-tax/" },
     { name: "Software Cost Calculator", href: "/calculators/software-cost/" },
   ],
   General: [
