@@ -23,9 +23,28 @@ export const metadata: Metadata = {
     "Free trade-specific calculators and honest software comparisons for plumbers, HVAC techs, electricians, roofers, landscapers, and general contractors.",
   metadataBase: new URL("https://mycontractortools.com"),
   openGraph: {
-    type: "website",
-    locale: "en_US",
+    title: {
+      default: "MyContractorTools — Free Calculators & Software Reviews for Contractors",
+      template: "%s | MyContractorTools",
+    },
+    description:
+      "Free trade-specific calculators and honest software comparisons for plumbers, HVAC techs, electricians, roofers, landscapers, and general contractors.",
+    url: "https://mycontractortools.com",
     siteName: "MyContractorTools",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: {
+      default: "MyContractorTools — Free Calculators & Software Reviews for Contractors",
+      template: "%s | MyContractorTools",
+    },
+    description:
+      "Free trade-specific calculators and honest software comparisons for plumbers, HVAC techs, electricians, roofers, landscapers, and general contractors.",
+  },
+  alternates: {
+    canonical: "./",
   },
 };
 

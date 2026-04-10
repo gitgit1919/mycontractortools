@@ -444,6 +444,41 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://mycontractortools.com/compare/servicetitan-alternatives/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mycontractortools.com/compare/jobber-alternatives/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mycontractortools.com/compare/buildertrend-alternatives/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mycontractortools.com/compare/housecall-pro-alternatives/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mycontractortools.com/compare/quickbooks-alternatives-contractors/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mycontractortools.com/compare/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mycontractortools.com/best/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <!-- Legal -->
   <url>
     <loc>https://mycontractortools.com/privacy-policy/</loc>
