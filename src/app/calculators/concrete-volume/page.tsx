@@ -127,6 +127,90 @@ export default function ConcreteVolumeCalculator() {
     };
   }, [sections, wasteFactor, pricePerYard]);
 
+  // Material list calculations
+  const materials = useMemo(() => {
+    const cy = totals.withWaste;
+
+    // Rebar: calculate for slabs, footings, and walls using 18" (1.5 ft) spacing
+    // Rebar runs both directions for slabs/footings, single direction for walls
+    let rebarLinearFt = 0;
+    let rebarApplicable = false;
+    sections.forEach((s) => {
+      if (s.shape === "slab" || s.shape === "footing") {
+        rebarApplicable = true;
+        const spacing = 1.5; // 18 inches in feet
+        const lengthBars = Math.ceil(s.width / spacing) + 1;
+        const widthBars = Math.ceil(s.length / spacing) + 1;
+        rebarLinearFt += (lengthBars * s.length + widthBars * s.width) * s.quantity;
+      } else if (s.shape === "wall") {
+        rebarApplicable = true;
+        const spacing = 1.5;
+        const horizontalBars = Math.ceil(s.height / spacing) + 1;
+        const verticalBars = Math.ceil(s.length / spacing) + 1;
+        rebarLinearFt += (horizontalBars * s.length + verticalBars * s.height) * s.quantity;
+      }
+    });
+    // Rebar comes in 20 ft sticks
+    const rebarSticks = Math.ceil(rebarLinearFt / 20);
+
+    // Wire mesh: 5 ft x 150 ft rolls = 750 sq ft per roll
+    // Applicable to slabs
+    let wireMeshSqFt = 0;
+    let wireMeshApplicable = false;
+    sections.forEach((s) => {
+      if (s.shape === "slab") {
+        wireMeshApplicable = true;
+        wireMeshSqFt += s.length * s.width * s.quantity;
+      }
+    });
+    // Add 10% overlap
+    const wireMeshWithOverlap = wireMeshSqFt * 1.1;
+    const wireMeshRolls = Math.ceil(wireMeshWithOverlap / 750);
+    // Also offer sheets: 5x10 = 50 sq ft each
+    const wireMeshSheets = Math.ceil(wireMeshWithOverlap / 50);
+
+    // Form boards: perimeter of slabs/footings, length of walls (both sides)
+    let formPerimeterFt = 0;
+    let formApplicable = false;
+    let maxDepthInches = 0;
+    sections.forEach((s) => {
+      if (s.shape === "slab" || s.shape === "footing") {
+        formApplicable = true;
+        formPerimeterFt += 2 * (s.length + s.width) * s.quantity;
+        if (s.depth > maxDepthInches) maxDepthInches = s.depth;
+      } else if (s.shape === "wall") {
+        formApplicable = true;
+        // Both sides of the wall
+        formPerimeterFt += 2 * s.length * s.quantity;
+        const wallDepthIn = s.height * 12;
+        if (wallDepthIn > maxDepthInches) maxDepthInches = wallDepthIn;
+      }
+    });
+    // Form board type based on max depth
+    const formBoardType = maxDepthInches <= 4 ? '2x4' : maxDepthInches <= 6 ? '2x6' : '2x8+';
+    // Form boards come in 8 ft lengths
+    const formBoards8ft = Math.ceil(formPerimeterFt / 8);
+
+    // Stakes: one every 3 feet of form perimeter
+    const stakes = Math.ceil(formPerimeterFt / 3);
+
+    return {
+      rebarApplicable,
+      rebarLinearFt: Math.ceil(rebarLinearFt),
+      rebarSticks,
+      wireMeshApplicable,
+      wireMeshSqFt: Math.ceil(wireMeshSqFt),
+      wireMeshRolls,
+      wireMeshSheets,
+      formApplicable,
+      formPerimeterFt: Math.ceil(formPerimeterFt),
+      formBoardType,
+      formBoards8ft,
+      stakes,
+      cubicYardsToOrder: cy,
+    };
+  }, [sections, totals.withWaste]);
+
   return (
     <CalculatorLayout
       title="Concrete Volume Calculator"
@@ -726,6 +810,294 @@ export default function ConcreteVolumeCalculator() {
             <strong>{totals.bags60lb} (60 lb)</strong> bags.
           </div>
         )}
+
+        {/* Print Results Button */}
+        <div className="mt-6 text-center print:hidden">
+          <button
+            type="button"
+            onClick={() => window.print()}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:opacity-90 transition-opacity"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+            Print Results
+          </button>
+        </div>
+      </div>
+
+      {/* Ready-Mix vs Bags Decision Helper */}
+      {totals.withWaste > 0 && (
+        <div className="mt-8 bg-brand-gray rounded-xl p-6">
+          <h2 className="text-xl font-bold text-brand-blue mb-4">
+            Ready-Mix vs. Bags: Which Should You Use?
+          </h2>
+
+          {totals.withWaste < 0.5 && (
+            <div className="bg-white rounded-lg p-5 border border-gray-200">
+              <div className="flex items-start gap-3">
+                <span className="text-2xl mt-0.5">&#128293;</span>
+                <div>
+                  <p className="font-semibold text-brand-blue text-lg">Recommendation: Mix Your Own Bags</p>
+                  <p className="text-gray-600 mt-1">
+                    At {totals.withWaste.toFixed(2)} cubic yards, bagged concrete is your most economical option.
+                    You would need <strong>{totals.bags80lb} bags (80 lb)</strong> or <strong>{totals.bags60lb} bags (60 lb)</strong>.
+                  </p>
+                  <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="bg-green-50 rounded-lg p-3 border border-green-200">
+                      <p className="text-sm font-semibold text-green-800">Estimated Bag Cost</p>
+                      <p className="text-lg font-bold text-green-700">
+                        ${(totals.bags80lb * 7.5).toFixed(0)} &ndash; ${(totals.bags80lb * 9).toFixed(0)}
+                      </p>
+                      <p className="text-xs text-green-600">80 lb bags at $7.50 &ndash; $9.00 each</p>
+                    </div>
+                    <div className="bg-amber-50 rounded-lg p-3 border border-amber-200">
+                      <p className="text-sm font-semibold text-amber-800">Ready-Mix (Not Recommended)</p>
+                      <p className="text-lg font-bold text-amber-700">
+                        ${(1 * pricePerYard + 75).toFixed(0)}+
+                      </p>
+                      <p className="text-xs text-amber-600">1 yd minimum + ~$75 short-load fee</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {totals.withWaste >= 0.5 && totals.withWaste <= 1 && (
+            <div className="bg-white rounded-lg p-5 border border-gray-200">
+              <div className="flex items-start gap-3">
+                <span className="text-2xl mt-0.5">&#9878;&#65039;</span>
+                <div>
+                  <p className="font-semibold text-brand-blue text-lg">Either Option Works &mdash; Compare Costs</p>
+                  <p className="text-gray-600 mt-1">
+                    At {totals.withWaste.toFixed(2)} cubic yards, both bags and ready-mix are viable.
+                    Bags require more labor; ready-mix saves time but may include short-load fees.
+                  </p>
+                  <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="bg-blue-50 rounded-lg p-3 border border-blue-200">
+                      <p className="text-sm font-semibold text-blue-800">Bag Option</p>
+                      <p className="text-lg font-bold text-blue-700">
+                        ${(totals.bags80lb * 7.5).toFixed(0)} &ndash; ${(totals.bags80lb * 9).toFixed(0)}
+                      </p>
+                      <p className="text-xs text-blue-600">{totals.bags80lb} bags (80 lb) &mdash; more labor, no delivery fee</p>
+                    </div>
+                    <div className="bg-blue-50 rounded-lg p-3 border border-blue-200">
+                      <p className="text-sm font-semibold text-blue-800">Ready-Mix Option</p>
+                      <p className="text-lg font-bold text-blue-700">
+                        ${(Math.max(totals.withWaste, 1) * pricePerYard + (totals.withWaste < 1 ? 75 : 0)).toFixed(0)}
+                      </p>
+                      <p className="text-xs text-blue-600">
+                        {totals.withWaste < 1
+                          ? `1 yd minimum + ~$75 short-load fee`
+                          : `${totals.withWaste.toFixed(2)} yd at $${pricePerYard}/yd`}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-3">
+                    Pro tip: If you have helpers and a mixer, bags save money. If you&apos;re working alone or need a smooth finish quickly, ready-mix is worth the premium.
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {totals.withWaste > 1 && (
+            <div className="bg-white rounded-lg p-5 border border-gray-200">
+              <div className="flex items-start gap-3">
+                <span className="text-2xl mt-0.5">&#128666;</span>
+                <div>
+                  <p className="font-semibold text-brand-blue text-lg">Recommendation: Order Ready-Mix Delivery</p>
+                  <p className="text-gray-600 mt-1">
+                    At {totals.withWaste.toFixed(2)} cubic yards, ready-mix truck delivery is strongly recommended.
+                    Mixing {totals.bags80lb} bags by hand would take hours and produce inconsistent results.
+                  </p>
+                  <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="bg-green-50 rounded-lg p-3 border border-green-200">
+                      <p className="text-sm font-semibold text-green-800">Ready-Mix Cost</p>
+                      <p className="text-lg font-bold text-green-700">
+                        ${totals.cost.toFixed(0)}
+                      </p>
+                      <p className="text-xs text-green-600">{totals.withWaste.toFixed(2)} yd at ${pricePerYard}/yd</p>
+                    </div>
+                    <div className="bg-red-50 rounded-lg p-3 border border-red-200">
+                      <p className="text-sm font-semibold text-red-800">Bag Cost (Not Recommended)</p>
+                      <p className="text-lg font-bold text-red-700">
+                        ${(totals.bags80lb * 7.5).toFixed(0)} &ndash; ${(totals.bags80lb * 9).toFixed(0)}
+                      </p>
+                      <p className="text-xs text-red-600">{totals.bags80lb} bags &mdash; extreme labor, inconsistent mix</p>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-3">
+                    Most ready-mix plants require a 1 yard minimum order. Orders under the truck capacity
+                    ({totals.withWaste < 10 ? '10' : '11'}+ yards) are typically delivered in a single load.
+                    {totals.withWaste >= 10 && ' Your pour may require multiple trucks.'}
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Complete Material List */}
+      {totals.withWaste > 0 && (
+        <div className="mt-8 bg-brand-gray rounded-xl p-6">
+          <h2 className="text-xl font-bold text-brand-blue mb-4">
+            Complete Material List
+          </h2>
+          <p className="text-sm text-gray-600 mb-4">
+            Everything you need for this pour, estimated from your dimensions. Adjust quantities based on your specific project requirements.
+          </p>
+
+          <div className="space-y-3">
+            {/* Concrete */}
+            <div className="bg-white rounded-lg p-4 border border-gray-200">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-lg">&#127959;</span>
+                <h3 className="font-semibold text-brand-blue">Concrete</h3>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                <div>
+                  <span className="text-gray-500">Ready-Mix:</span>{" "}
+                  <span className="font-semibold">{totals.withWaste.toFixed(2)} cubic yards</span>
+                </div>
+                <div>
+                  <span className="text-gray-500">80 lb Bags:</span>{" "}
+                  <span className="font-semibold">{totals.bags80lb} bags</span>
+                </div>
+                <div>
+                  <span className="text-gray-500">60 lb Bags:</span>{" "}
+                  <span className="font-semibold">{totals.bags60lb} bags</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Rebar */}
+            {materials.rebarApplicable && (
+              <div className="bg-white rounded-lg p-4 border border-gray-200">
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-lg">&#128296;</span>
+                  <h3 className="font-semibold text-brand-blue">Rebar (#4 Rebar, 1/2&quot;)</h3>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                  <div>
+                    <span className="text-gray-500">Linear Feet:</span>{" "}
+                    <span className="font-semibold">{materials.rebarLinearFt} ft</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500">20 ft Sticks:</span>{" "}
+                    <span className="font-semibold">{materials.rebarSticks} sticks</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500">Spacing:</span>{" "}
+                    <span className="font-semibold">18&quot; on center (both directions)</span>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-400 mt-2">
+                  Based on 18&quot; on-center grid spacing. Also budget for rebar tie wire and a tie tool.
+                </p>
+              </div>
+            )}
+
+            {/* Wire Mesh */}
+            {materials.wireMeshApplicable && (
+              <div className="bg-white rounded-lg p-4 border border-gray-200">
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-lg">&#129513;</span>
+                  <h3 className="font-semibold text-brand-blue">Welded Wire Mesh (6x6 W1.4/W1.4)</h3>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                  <div>
+                    <span className="text-gray-500">Area:</span>{" "}
+                    <span className="font-semibold">{materials.wireMeshSqFt} sq ft</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500">Rolls (5&apos;x150&apos;):</span>{" "}
+                    <span className="font-semibold">{materials.wireMeshRolls} {materials.wireMeshRolls === 1 ? 'roll' : 'rolls'}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500">Sheets (5&apos;x10&apos;):</span>{" "}
+                    <span className="font-semibold">{materials.wireMeshSheets} sheets</span>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-400 mt-2">
+                  Includes 10% for overlap. Wire mesh is an alternative to rebar for residential slabs 4&quot; or thinner.
+                </p>
+              </div>
+            )}
+
+            {/* Form Boards */}
+            {materials.formApplicable && (
+              <div className="bg-white rounded-lg p-4 border border-gray-200">
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-lg">&#129717;</span>
+                  <h3 className="font-semibold text-brand-blue">Form Boards &amp; Stakes</h3>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
+                  <div>
+                    <span className="text-gray-500">Perimeter:</span>{" "}
+                    <span className="font-semibold">{materials.formPerimeterFt} linear ft</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500">Board Size:</span>{" "}
+                    <span className="font-semibold">{materials.formBoardType}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500">8&apos; Boards:</span>{" "}
+                    <span className="font-semibold">{materials.formBoards8ft} boards</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500">Wood Stakes:</span>{" "}
+                    <span className="font-semibold">{materials.stakes} stakes</span>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-400 mt-2">
+                  Stakes placed every 3 feet. Budget for duplex nails or screws to attach forms.
+                  {materials.formBoardType === '2x4' && ' 2x4 forms work for slabs up to 4 inches thick.'}
+                  {materials.formBoardType === '2x6' && ' 2x6 forms work for slabs up to 6 inches thick.'}
+                  {materials.formBoardType === '2x8+' && ' Use 2x8 or larger forms for deep pours. Consider plywood forms for walls.'}
+                </p>
+              </div>
+            )}
+
+            {/* Additional Supplies */}
+            <div className="bg-white rounded-lg p-4 border border-gray-200">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-lg">&#128230;</span>
+                <h3 className="font-semibold text-brand-blue">Additional Supplies</h3>
+              </div>
+              <ul className="text-sm text-gray-600 space-y-1 ml-1">
+                <li>&#8226; Concrete mix water (approx. 1 gallon per 80 lb bag, if using bags)</li>
+                <li>&#8226; Vapor barrier / plastic sheeting (6 mil poly for slabs on grade)</li>
+                <li>&#8226; Curing compound or plastic sheeting for curing</li>
+                <li>&#8226; Expansion joint material (for slabs abutting existing concrete or structures)</li>
+                <li>&#8226; Release oil or form release agent (for easy form removal)</li>
+                <li>&#8226; Gravel / crushed stone sub-base (typically 4&quot; compacted base under slabs)</li>
+                <li>&#8226; Hand tools: screed board, bull float, edger, groover, hand float, trowel</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Weather & Curing Advisory */}
+      <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-5">
+        <div className="flex items-start gap-3">
+          <svg className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <div>
+            <h3 className="font-semibold text-blue-900 mb-1">Weather &amp; Curing Advisory</h3>
+            <p className="text-sm text-blue-800">
+              Concrete should not be poured below 40&deg;F or above 90&deg;F. In hot weather, plan for
+              faster set times and consider using ice water in the mix or pouring in early morning. Cold
+              weather requires insulated blankets or heated enclosures and may need accelerating admixtures.
+              Keep concrete moist for at least 7 days for proper curing &mdash; use curing compound, wet
+              burlap, or plastic sheeting.
+            </p>
+          </div>
+        </div>
       </div>
     </CalculatorLayout>
   );
