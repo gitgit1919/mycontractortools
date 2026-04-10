@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import EmailCapture from "@/components/EmailCapture";
+import { getTrialUrl } from "@/lib/trialUrls";
 
 export const metadata: Metadata = {
   title: "Housecall Pro vs JobNimbus (2026) — Honest Comparison",
@@ -51,23 +52,39 @@ export default function HousecallProVsJobNimbus() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="bg-white rounded-lg p-4 border border-gray-200">
             <h3 className="font-bold text-brand-blue mb-2">Choose Housecall Pro if:</h3>
-            <ul className="text-sm text-gray-700 space-y-1">
+            <ul className="text-sm text-gray-700 space-y-1 mb-4">
               <li>- You run any trade other than roofing</li>
               <li>- You want affordable software starting at $49/mo</li>
               <li>- Automated marketing (postcards, reviews) matters to you</li>
               <li>- You need online booking and a customer portal</li>
               <li>- You want a clean, easy-to-learn interface</li>
             </ul>
+            <a
+              href={getTrialUrl("Housecall Pro")!}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+            >
+              Start Housecall Pro free trial &rarr;
+            </a>
           </div>
           <div className="bg-white rounded-lg p-4 border border-gray-200">
             <h3 className="font-bold text-brand-orange mb-2">Choose JobNimbus if:</h3>
-            <ul className="text-sm text-gray-700 space-y-1">
+            <ul className="text-sm text-gray-700 space-y-1 mb-4">
               <li>- You&apos;re a roofing contractor</li>
               <li>- You need aerial measurement integrations</li>
               <li>- Insurance claims and Xactimate are part of your workflow</li>
               <li>- You want a visual sales pipeline for leads</li>
               <li>- Photo documentation is critical to your process</li>
             </ul>
+            <a
+              href={getTrialUrl("JobNimbus")!}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+            >
+              Start JobNimbus free trial &rarr;
+            </a>
           </div>
         </div>
       </div>
@@ -179,12 +196,30 @@ export default function HousecallProVsJobNimbus() {
           claims workflow, visual sales pipeline, and photo documentation are purpose-built for how
           roofing companies actually work. No other general-purpose tool matches these capabilities.
         </p>
-        <p className="text-white/90 leading-relaxed">
+        <p className="text-white/90 leading-relaxed mb-4">
           If you&apos;re any other trade — HVAC, plumbing, electrical, cleaning, landscaping —
           choose Housecall Pro. It&apos;s more affordable, easier to learn, and its marketing
           automation tools (postcards, review requests, online booking) help you grow your business
           in ways that JobNimbus simply doesn&apos;t focus on.
         </p>
+        <div className="flex flex-wrap gap-3">
+          <a
+            href={getTrialUrl("Housecall Pro")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium px-5 py-2.5 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Start Housecall Pro free trial
+          </a>
+          <a
+            href={getTrialUrl("JobNimbus")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-white text-brand-blue font-medium px-5 py-2.5 rounded-lg hover:bg-white/90 transition-colors"
+          >
+            Start JobNimbus free trial
+          </a>
+        </div>
       </section>
 
       {/* Related pages */}

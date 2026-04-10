@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import EmailCapture from "@/components/EmailCapture";
+import { getTrialUrl } from "@/lib/trialUrls";
 
 export const metadata: Metadata = {
   title: "Jobber vs JobNimbus (2026) — Honest Comparison",
@@ -51,23 +52,39 @@ export default function JobberVsJobNimbus() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="bg-white rounded-lg p-4 border border-gray-200">
             <h3 className="font-bold text-brand-blue mb-2">Choose Jobber if:</h3>
-            <ul className="text-sm text-gray-700 space-y-1">
+            <ul className="text-sm text-gray-700 space-y-1 mb-4">
               <li>- You run a general service contracting business</li>
               <li>- You want a clean, intuitive interface</li>
               <li>- Quoting and customer self-service are priorities</li>
               <li>- You serve multiple trades (HVAC, landscaping, cleaning, etc.)</li>
               <li>- You want strong scheduling and dispatching</li>
             </ul>
+            <a
+              href={getTrialUrl("Jobber")!}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+            >
+              Start Jobber free trial &rarr;
+            </a>
           </div>
           <div className="bg-white rounded-lg p-4 border border-gray-200">
             <h3 className="font-bold text-brand-orange mb-2">Choose JobNimbus if:</h3>
-            <ul className="text-sm text-gray-700 space-y-1">
+            <ul className="text-sm text-gray-700 space-y-1 mb-4">
               <li>- You&apos;re a roofing contractor</li>
               <li>- You need aerial measurement integrations</li>
               <li>- You handle insurance claims and supplements</li>
               <li>- You want a CRM with visual sales pipeline boards</li>
               <li>- Lead tracking and sales management are critical</li>
             </ul>
+            <a
+              href={getTrialUrl("JobNimbus")!}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+            >
+              Start JobNimbus free trial &rarr;
+            </a>
           </div>
         </div>
       </div>
@@ -164,13 +181,31 @@ export default function JobberVsJobNimbus() {
       {/* Bottom line */}
       <section className="mb-10 bg-brand-blue text-white rounded-xl p-6">
         <h2 className="text-xl font-bold mb-3">The Bottom Line</h2>
-        <p className="text-white/90 leading-relaxed">
+        <p className="text-white/90 leading-relaxed mb-4">
           If you&apos;re a roofing contractor, JobNimbus is the better tool — aerial measurements,
           insurance claim workflows, and the sales pipeline boards are built for how roofers actually
           work. For every other trade (HVAC, landscaping, cleaning, electrical, plumbing), Jobber is
           the stronger choice with better scheduling, a cleaner interface, and more predictable
           pricing. Both offer free trials, so test the one that matches your trade.
         </p>
+        <div className="flex flex-wrap gap-3">
+          <a
+            href={getTrialUrl("Jobber")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium px-5 py-2.5 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Start Jobber free trial
+          </a>
+          <a
+            href={getTrialUrl("JobNimbus")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-white text-brand-blue font-medium px-5 py-2.5 rounded-lg hover:bg-white/90 transition-colors"
+          >
+            Start JobNimbus free trial
+          </a>
+        </div>
       </section>
 
       {/* Email capture */}

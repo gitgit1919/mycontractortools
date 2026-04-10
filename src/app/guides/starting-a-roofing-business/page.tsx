@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
+import AffiliateProviderCards from "@/components/AffiliateProviderCards";
 
 export const metadata: Metadata = {
   title:
@@ -575,6 +576,12 @@ export default function StartingRoofingBusiness() {
         </p>
       </div>
 
+      <AffiliateProviderCards
+        category="insurance"
+        heading="Where Roofers Get Insurance Quotes"
+        intro="Roofing premiums vary widely between carriers. Get quotes from at least two of these before binding a policy — savings of $1,000+/yr are common just by shopping around."
+      />
+
       {/* Section 6 */}
       <SectionHeading id="business-structure">
         6. Business Structure & Registration
@@ -656,6 +663,12 @@ export default function StartingRoofingBusiness() {
           { item: "Business bank account", cost: "$0-$15/mo", notes: "Many banks offer free business checking" },
           { item: "Operating agreement", cost: "$0-$100", notes: "Template is fine for single-member LLC" },
         ]}
+      />
+
+      <AffiliateProviderCards
+        category="llc"
+        heading="LLC Formation Services for Roofers"
+        intro="If you'd rather not navigate your state's filing portal, these formation services handle the paperwork and act as your registered agent. DIY is fine too — every state lets you file online for the state fee alone."
       />
 
       {/* Section 7 */}

@@ -142,6 +142,14 @@ const allCalculators: Calculator[] = [
     tags: ["w2", "1099", "employee cost", "burden", "payroll", "subcontractor", "true cost", "loaded rate"],
   },
   {
+    name: "Equipment Buy vs Lease",
+    href: "/calculators/equipment-buy-vs-lease/",
+    description: "Compare buying vs leasing your next truck, skid steer, lift, or excavator. See total cost over time, year-1 cash flow impact, and which option wins for your situation.",
+    icon: "🚚",
+    category: "Business",
+    tags: ["buy vs lease", "equipment", "truck", "lease", "loan", "section 179", "cash flow", "tco", "total cost"],
+  },
+  {
     name: "Stair Calculator",
     href: "/calculators/stair/",
     description: "Calculate risers, treads, stringer length, and stair angle with IRC code compliance checking.",

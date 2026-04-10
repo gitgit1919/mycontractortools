@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import EmailCapture from "@/components/EmailCapture";
+import { getTrialUrl } from "@/lib/trialUrls";
 
 export const metadata: Metadata = {
   title: "Jobber vs FieldEdge (2026) — Honest Comparison",
@@ -51,23 +52,39 @@ export default function JobberVsFieldEdge() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="bg-white rounded-lg p-4 border border-gray-200">
             <h3 className="font-bold text-brand-blue mb-2">Choose Jobber if:</h3>
-            <ul className="text-sm text-gray-700 space-y-1">
+            <ul className="text-sm text-gray-700 space-y-1 mb-4">
               <li>- You&apos;re a small to mid-size service contractor</li>
               <li>- Budget matters — you need affordable software</li>
               <li>- You want a clean, easy-to-learn interface</li>
               <li>- You serve multiple trades (not just HVAC/plumbing)</li>
               <li>- You want a customer self-service portal</li>
             </ul>
+            <a
+              href={getTrialUrl("Jobber")!}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+            >
+              Start Jobber free trial &rarr;
+            </a>
           </div>
           <div className="bg-white rounded-lg p-4 border border-gray-200">
             <h3 className="font-bold text-brand-orange mb-2">Choose FieldEdge if:</h3>
-            <ul className="text-sm text-gray-700 space-y-1">
+            <ul className="text-sm text-gray-700 space-y-1 mb-4">
               <li>- You run an established HVAC, plumbing, or electrical shop</li>
               <li>- You need a built-in flat-rate pricebook</li>
               <li>- QuickBooks Desktop integration is critical</li>
               <li>- You want detailed technician performance tracking</li>
               <li>- You have the budget for per-user pricing</li>
             </ul>
+            <a
+              href={getTrialUrl("FieldEdge")!}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+            >
+              Get a FieldEdge demo &rarr;
+            </a>
           </div>
         </div>
       </div>
@@ -164,7 +181,7 @@ export default function JobberVsFieldEdge() {
       {/* Bottom line */}
       <section className="mb-10 bg-brand-blue text-white rounded-xl p-6">
         <h2 className="text-xl font-bold mb-3">The Bottom Line</h2>
-        <p className="text-white/90 leading-relaxed">
+        <p className="text-white/90 leading-relaxed mb-4">
           Jobber is the better choice for most small to mid-size service contractors who want
           affordable, easy-to-use software that covers the basics well. FieldEdge is worth the
           premium if you run an established HVAC, plumbing, or electrical shop and need a flat-rate
@@ -172,6 +189,24 @@ export default function JobberVsFieldEdge() {
           metrics. The price difference is significant — make sure FieldEdge&apos;s specialized features
           justify the cost for your specific operation.
         </p>
+        <div className="flex flex-wrap gap-3">
+          <a
+            href={getTrialUrl("Jobber")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium px-5 py-2.5 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Start Jobber free trial
+          </a>
+          <a
+            href={getTrialUrl("FieldEdge")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-white text-brand-blue font-medium px-5 py-2.5 rounded-lg hover:bg-white/90 transition-colors"
+          >
+            Get a FieldEdge demo
+          </a>
+        </div>
       </section>
 
       {/* Email capture */}

@@ -75,6 +75,7 @@ const relatedByTrade: Record<string, RelatedCalc[]> = {
     { name: "Crew Day Cost Calculator", href: "/calculators/crew-day-cost/" },
     { name: "Max Lead Cost Calculator", href: "/calculators/lead-cost/" },
     { name: "W-2 vs 1099 Employee Cost", href: "/calculators/employee-true-cost/" },
+    { name: "Equipment Buy vs Lease", href: "/calculators/equipment-buy-vs-lease/" },
     { name: "Self-Employment Tax Calculator", href: "/calculators/self-employment-tax/" },
     { name: "Software Cost Calculator", href: "/calculators/software-cost/" },
   ],

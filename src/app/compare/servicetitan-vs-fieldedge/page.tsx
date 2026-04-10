@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import EmailCapture from "@/components/EmailCapture";
+import { getTrialUrl } from "@/lib/trialUrls";
 
 export const metadata: Metadata = {
   title: "ServiceTitan vs FieldEdge (2026) — Honest Comparison",
@@ -52,23 +53,39 @@ export default function ServiceTitanVsFieldEdge() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="bg-white rounded-lg p-4 border border-gray-200">
             <h3 className="font-bold text-brand-blue mb-2">Choose ServiceTitan if:</h3>
-            <ul className="text-sm text-gray-700 space-y-1">
+            <ul className="text-sm text-gray-700 space-y-1 mb-4">
               <li>- You have 5+ techs and are growing fast</li>
               <li>- Marketing ROI tracking and call booking matter</li>
               <li>- You want enterprise-grade reporting and KPI dashboards</li>
               <li>- You need built-in financing and multi-option proposals</li>
               <li>- You can invest $398+/mo as a starting cost</li>
             </ul>
+            <a
+              href={getTrialUrl("ServiceTitan")!}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+            >
+              Get a ServiceTitan demo &rarr;
+            </a>
           </div>
           <div className="bg-white rounded-lg p-4 border border-gray-200">
             <h3 className="font-bold text-brand-orange mb-2">Choose FieldEdge if:</h3>
-            <ul className="text-sm text-gray-700 space-y-1">
+            <ul className="text-sm text-gray-700 space-y-1 mb-4">
               <li>- You&apos;re a mid-size shop wanting simpler pricebook management</li>
               <li>- QuickBooks Desktop integration is critical</li>
               <li>- You want solid dispatching without enterprise complexity</li>
               <li>- Your team prefers a shorter learning curve</li>
               <li>- You want per-user pricing without large minimums</li>
             </ul>
+            <a
+              href={getTrialUrl("FieldEdge")!}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-brand-orange/90 transition-colors"
+            >
+              Get a FieldEdge demo &rarr;
+            </a>
           </div>
         </div>
       </div>
@@ -180,12 +197,30 @@ export default function ServiceTitanVsFieldEdge() {
           investment — both in cost and implementation time — but the data and automation can drive
           real revenue growth for shops ready to use it.
         </p>
-        <p className="text-white/90 leading-relaxed">
+        <p className="text-white/90 leading-relaxed mb-4">
           FieldEdge is the better fit for mid-size HVAC, plumbing, and electrical shops that want
           solid pricebook management, reliable QuickBooks Desktop integration, and effective
           dispatching without the enterprise complexity or price tag. It does the core job well
           at a lower cost and with a shorter learning curve.
         </p>
+        <div className="flex flex-wrap gap-3">
+          <a
+            href={getTrialUrl("ServiceTitan")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-orange text-white font-medium px-5 py-2.5 rounded-lg hover:bg-brand-orange/90 transition-colors"
+          >
+            Get a ServiceTitan demo
+          </a>
+          <a
+            href={getTrialUrl("FieldEdge")!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-white text-brand-blue font-medium px-5 py-2.5 rounded-lg hover:bg-white/90 transition-colors"
+          >
+            Get a FieldEdge demo
+          </a>
+        </div>
       </section>
 
       {/* Related pages */}

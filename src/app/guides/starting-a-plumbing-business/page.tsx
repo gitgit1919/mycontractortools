@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
+import AffiliateProviderCards from "@/components/AffiliateProviderCards";
 
 export const metadata: Metadata = {
   title:
@@ -419,6 +420,12 @@ export default function StartingPlumbingBusiness() {
         </p>
       </TipBox>
 
+      <AffiliateProviderCards
+        category="insurance"
+        heading="Where Plumbers Get Insurance Quotes"
+        intro="Plumbing GL premiums vary widely between carriers. Water damage exposure makes shopping mandatory — get quotes from at least two of these before binding."
+      />
+
       {/* Section 6 */}
       <SectionHeading id="business-structure">
         6. Business Structure
@@ -488,6 +495,12 @@ export default function StartingPlumbingBusiness() {
           to track whether you have reached that threshold.
         </p>
       </TipBox>
+
+      <AffiliateProviderCards
+        category="llc"
+        heading="LLC Formation Services for Plumbers"
+        intro="If you'd rather not navigate your state's filing portal, these formation services handle the paperwork and act as your registered agent. DIY is fine too — every state lets you file online for the state fee alone."
+      />
 
       {/* Section 7 */}
       <SectionHeading id="pricing">

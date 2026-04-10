@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import GuideLayout from "@/components/GuideLayout";
+import AffiliateProviderCards from "@/components/AffiliateProviderCards";
 
 export const metadata: Metadata = {
   title:
@@ -566,6 +567,12 @@ export default function StartingElectricalBusiness() {
         </p>
       </div>
 
+      <AffiliateProviderCards
+        category="insurance"
+        heading="Where Electricians Get Insurance Quotes"
+        intro="Electrical work is high-liability — fire risk, code violations, and inspection issues. Get quotes from at least two carriers before binding a policy."
+      />
+
       {/* Section 6 */}
       <SectionHeading id="business-structure">
         6. Business Structure
@@ -633,6 +640,12 @@ export default function StartingElectricalBusiness() {
           to estimate your current tax burden.
         </p>
       </TipBox>
+
+      <AffiliateProviderCards
+        category="llc"
+        heading="LLC Formation Services for Electricians"
+        intro="If you'd rather not navigate your state's filing portal, these formation services handle the paperwork and act as your registered agent. DIY is fine too — every state lets you file online for the state fee alone."
+      />
 
       {/* Section 7 */}
       <SectionHeading id="pricing">
